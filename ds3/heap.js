@@ -71,25 +71,6 @@ class minheap {
     }
   }
 
-  shift(i){
-    let size=this.size()
-    let left=this.leftchild()
-    let right= this.rightchild()
-    let smallest
-    while(left<=size){
-        if(right<=size && this.heap[right]<this.heap[left]){
-            smallest=right
-        }else{
-            smallest=left
-        }
-        
-        if(this.heap[i]>this.heap[smallest]){
-        this.swap(i,smallest)
-        i=smallest
-        left=this.leftchild(i)
-        }
-    } 
-  }
 }
 
 const h = new minheap();

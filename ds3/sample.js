@@ -124,6 +124,30 @@ class minheap {
 
   delete(){
     this.swap(0,this.size())
+    this.heap.pop()
+    this.shiftdown(0)
+  }
+
+  shiftdown(i){
+    const size= this.size()
+    const left= this.leftChild(i)
+    const right= this.rightchild(i)
+    let smallest
+
+    while(left<=size){
+      if(right<=size && this.heap[right]<this.heap[left]){
+         smallest = right
+      }else{
+         smallest=left 
+      }
+      if(this.heap[i]>this.heap[smallest]){
+        this.swap(i,smallest)
+        i=smallest
+        left=this.leftChild(i)
+      }
+    }
+    return
+
   }
 }
 

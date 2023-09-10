@@ -7,103 +7,112 @@ class node{
 }
 
 
-class bst{
-    constructor(){
-    this.root=null
+class bst {
+  constructor() {
+    this.root = null;
+  }
+
+  add(value) {
+    const newnode = new node(value);
+    if (!this.root) {
+      this.root = newnode;
+    } else {
+      this.insert(this.root, newnode);
+    }
+  }
+
+  insert(root, newnode) {
+    if (newnode.value < root.value) {
+      if (root.left == null) {
+        root.left = newnode;
+      } else {
+        this.insert(root.left, newnode);
+      }
+    } else {
+      if (root.right == null) {
+        root.right = newnode;
+      } else {
+        this.insert(root.right, newnode);
+      }
+    }
+  }
+
+
+  constains(value) {
+    return this.constainsNode(this.root, value);
+  }
+  constainsNode(root, value) {
+    if (root == null) {
+      return false;
+    }
+    if (root.value == value) {
+      return true;
     }
 
-    add(value){
-       const newnode=new node(value)
-       if(!this.root){
-        this.root=newnode
-       }else{
-        this.insert(this.root,newnode)
-       }
+    if (value < root.value) {
+      return this.constainsNode(root.left, value);
+    } else {
+      return this.constainsNode(root.right, value);
+    }
+  }
+
+  
+  delete(value) {
+    this.deleteNode(this.root, value);
+  }
+
+  deleteNode(root, value) {
+    if (!root.value) return;
+
+    if (value < root.value) {
+      root = this.deleteNode(root.left, value);
+    } else {
+      root = this.deleteNode(root.right, value);
+    }
+    if (!root.left || !root.right) {
+      root = null;
+    } else if (root.left == null) {
+      root = root.right;
+    } else if (root.right == null) {
+      root = root.left;
+    } else {
+      const minvalue = 0;
+    }
+  }
+
+  preTraversel() {
+    return this.preNode(this.root);
+  }
+  preNode(root) {
+    if (root == null) {
+      return false;
     }
 
-    insert(root,newnode){
-        if(newnode.value<root.value){
-            if(root.left==null){
-                root.left=newnode
-            }else{
-                this.insert(root.left,newnode)
-            }
-        }else{
-            if(root.right==null){
-                root.right=newnode
-            }else{
-            this.insert(root.right,newnode)
-            }  
-        }
+    this.preNode(root.left);
+    this.preNode(root.right);
+    console.log(root.value);
+  }
+
+  inorderTraversal() {
+    return this.inorderNode(this.root);
+  }
+  inorderNode(root) {
+    if (root == null) {
+      return false;
     }
+    this.inorderNode(root.left);
+    console.log(root.value);
+    this.inorderNode(root.right);
+  }
 
-    constains(value){
-        return this.constainsNode(this.root,value)
+   minimumValue(){
+    let root= this.root
+    while(root.left){
+    root=root.left
     }
-    constainsNode(root,value){
-        if(root==null){
-            return false        
-        }
-        if(root.value==value){
-            return true
-        }
-
-        if(value<root.value){
-            return this.constainsNode(root.left,value)
-        }else{
-            return this.constainsNode(root.right,value)
-
-        }
-    }
-
-    delete(value){
-   this.deleteNode(this.root,value)
-    }
-
-    deleteNode(root,value){
-        if(!root.value) return
-
-        if(value<root.value){
-            root=this.deleteNode(root.left,value)
-        }else{
-           root=this.deleteNode(root.right,value)
-        }
-        if(!root.left || !root.right){
-            root=null
-        }else if(root.left==null){
-            root=root.right
-        }else if(root.right==null){
-            root=root.left
-        }else{
-            const minvalue=0  
-        }
-    }
-
-    preTraversel(){
-        return this.preNode(this.root)
-    }
-    preNode(root){
-        if(root==null){
-            return false
-        }
-
-        this.preNode(root.left)
-        this.preNode(root.right)
-        console.log(root.value)
-    }
-
-    inorderTraversal(){
-        return this.inorderNode(this.root)
-    }
-    inorderNode(root){
-        if(root==null){
-            return false
-        }
-        this.inorderNode(root.left)
-        console.log(root.value)
-        this.inorderNode(root.right)
-    }
-
+    console.log(`minimum value`,root.value);
+   }
+   
 }
 
 const b=new bst()
@@ -113,5 +122,6 @@ b.add(67)
 b.add(21)
 b.preTraversel()
 b.inorderTraversal()
+b.minimumValue()
 console.log(`Contains 68 : `, b.constains(68))
 console.log(b)
