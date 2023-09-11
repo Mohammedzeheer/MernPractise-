@@ -87,10 +87,9 @@ class bst {
     if (root == null) {
       return false;
     }
-
+    console.log(root.value);
     this.preNode(root.left);
     this.preNode(root.right);
-    console.log(root.value);
   }
 
   inorderTraversal() {
