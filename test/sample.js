@@ -120,3 +120,10 @@
 // writableStream.on('finish', () => {
 //   console.log('Write operation complete.');
 // });
+
+
+  const today = new Date();
+  
+  console.log(today);
+
+  

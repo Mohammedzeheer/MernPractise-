@@ -224,93 +224,141 @@
 // console.log(b);
 
 
-class node{
-  constructor(value){
-    this.value=value
-    this.left=null
-    this.right=null
-  }
-}
+// class node{
+//   constructor(value){
+//     this.value=value
+//     this.left=null
+//     this.right=null
+//   }
+// }
 
-class bst{
+// class bst{
+//   constructor(){
+//     this.root=null
+//   }
+
+//   insert(value){
+//   let newnode = new node(value)
+//     if(!this.root){
+//       this.root= newnode 
+//     }else{
+//       this.insertnode(this.root,newnode)
+//     }
+//   }
+ 
+//   insertnode(root,newnode){
+//   if(newnode.value<root.value){
+//     if(root.left==null){
+//       root.left=newnode
+//     }else{
+//       this.insertnode(root.left,newnode)
+//     }
+//   }else{
+//     if(root.right==null){
+//       root.right=newnode
+//     }else{
+//       this.insertnode(root.rigth,newnode)
+//     }
+//  } 
+//   }
+
+//   delete(value){
+//      this.deletenode(this.root,value)
+//   }
+
+//   deletenode(root,value){
+//     if(!root.value){
+//       return false
+//     }
+
+//     if(value<root.value){
+//       root=this.deletenode(root.left,value)
+//     }else{
+//       root=this.deletenode(root.right,value)
+//     }
+//     if(!root.left && !root.right){
+//       root=null
+//     }else if(!root.left){
+//       root=root.right
+//     }else if(!root.left){
+//       root=root.right
+//     }else{
+//       let minimum = this.minimumValue(root.right)
+//       root.value=minimum
+//       root.right=this.deletenode(root.right,minimum.value)
+//       }
+//     }
+
+
+//   minimumValue(root){
+//     if(!root.left)
+//      {
+//      return root.value
+//      }else{
+//       this.minimumValue(root.left)
+//      }
+//     }
+
+//     _findMin(node) {
+//       while (node.left) {
+//           node = node.left;
+//       }
+//       return node;
+//   }
+// }
+
+// const b=new bst()
+// b.insert(34)
+// b.insert(12)
+// b.insert(4)
+// b.insert(14)
+
+// console.log(b);
+
+class minheap{
   constructor(){
-    this.root=null
+    this.heap=[]
+  }
+  
+  parents(i){
+    return Math.floor((i-2)/2)
+  }
+
+  leftChild(i){
+    return 2*i+1
+  }
+
+  rightChild(i){
+    return 2*i+2
+  }
+
+  size(){
+   return this.heap.length-1
+  }
+
+  swap(i,j){
+  [this.heap[i],this.heap[j]=this.heap[j],this.heap[i]]
   }
 
   insert(value){
-  let newnode = new node(value)
-    if(!this.root){
-      this.root= newnode 
-    }else{
-      this.insertnode(this.root,newnode)
-    }
-  }
- 
-  insertnode(root,newnode){
-  if(newnode.value<root.value){
-    if(root.left==null){
-      root.left=newnode
-    }else{
-      this.insertnode(root.left,newnode)
-    }
-  }else{
-    if(root.right==null){
-      root.right=newnode
-    }else{
-      this.insertnode(root.rigth,newnode)
-    }
- } 
+    this.heap.push(value)
+    this.heapup(this.size())
   }
 
-  delete(value){
-     this.deletenode(this.root,value)
+  heapup(i){
+    let parents=this.parents(i)
+    while(i>0&& this.heap[i]<this.heap[parents]){
+      this.swap(i,parents)
+      i=parents
+      parents=this.parents(i)
+    }
   }
 
-  deletenode(root,value){
-    if(!root.value){
-      return false
-    }
-
-    if(value<root.value){
-      root=this.deletenode(root.left,value)
-    }else{
-      root=this.deletenode(root.right,value)
-    }
-    if(!root.left && !root.right){
-      root=null
-    }else if(!root.left){
-      root=root.right
-    }else if(!root.left){
-      root=root.right
-    }else{
-      let minimum = this.minimumValue(root.right)
-      root.value=minimum
-      root.right=this.deletenode(root.right,minimum.value)
-      }
-    }
-
-
-  minimumValue(root){
-    if(!root.left)
-     {
-     return root.value
-     }else{
-      this.minimumValue(root.left)
-     }
-    }
-
-    _findMin(node) {
-      while (node.left) {
-          node = node.left;
-      }
-      return node;
+  heapyfy(array){
+   for(let i=array.length;i>0;i--){
+     this.heap=array[i]
+     this.shiftdown()
+   }
   }
+
 }
-
-const b=new bst()
-b.insert(34)
-b.insert(12)
-b.insert(4)
-b.insert(14)
-
-console.log(b);
