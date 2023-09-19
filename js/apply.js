@@ -7,5 +7,5 @@ const person = {
     console.log(greeting + ' ' + this.firstName + ' ' + this.lastName);
   }
   
-  printName.apply(person, ['Hello']);
+  printName.call(person, ['Hello']);
   
