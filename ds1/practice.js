@@ -5,6 +5,8 @@
 //     }
 // }
 
+const { link } = require("fs")
+
 // class linkedlist {
 //   constructor() {
 //     this.head = null;
@@ -184,110 +186,226 @@
 // l.print()
 
 
+// class node{
+//   constructor(value){
+//     this.value=value
+//     this.next = null
+//   }
+// }
+
+// class linkedlist{
+
+//   constructor(){
+//     this.head=null
+//     this.tail=null
+//   }
+
+//   add(data){
+//     const newnode=new node(data)
+//     if(!this.head){
+//       this.head= newnode
+//       this.tail=newnode
+//       return
+//     }
+//     this.tail.next=newnode 
+//     this.tail=newnode   
+//   }
+
+//   addhead(value){
+//     const newnode= new node(value)
+//     newnode.next=this.head
+//     this.head = newnode 
+//   }
+
+//   addAfter(value,newvalue){
+//     const newnode  = new node(newvalue)
+//     let curr = this.head
+//     while(curr){
+//        if(curr.value==value){
+//       newnode.next=curr.next
+//       curr.next=newnode 
+//     }
+//     curr=curr.next
+//     }
+//   }
+
+
+//   insertAfter(value,newValue){
+//     const newnode = new node(newValue)
+//     let curr= this.head 
+//     while(curr){
+//       if(curr.value===value){
+//         if(!curr.next){
+//           curr.next=newnode 
+//           this.tail=newnode
+//         }
+//         newnode.next=curr.next
+//         curr.next=newnode
+//       }
+//       curr=curr.next
+//     }
+//   }
+  
+//   print(){
+//     let curr= this.head
+//     while(curr){
+//       console.log(curr.value)
+//       curr=curr.next
+//     }
+//   }
+
+
+//   reverse(){
+//     if(!this.head)return 
+//     let next= null
+//     let prev= null
+//     let curr= this.head
+//  while(curr){
+//     next=curr.next 
+//     curr.next=prev
+//     prev=curr
+//     curr= next
+//  }
+//  this.head= prev
+//   }
+
+//   middle(){
+//     let mid= this.head
+//     let temp= this.head
+//     while(temp && temp.next){
+//       mid = mid.next
+//       temp= temp.next.next
+//     }
+//   console.log(`mid value: ${mid.value}`) 
+//   }
+
+// }
+
+// let l=new linkedlist()
+// l.add(34)
+// l.add(36)
+// l.addhead(32)
+// l.middle()
+// l.print()
+// l.reverse()
+// l.print()
+// // console.log(l)
+// l.print()
+
+
+// let array = [1, 2, 3, 4, 5, 6, 7];
+
+// function BinarySearch(array,target,start,end){
+//   let mid= Math.floor((start+end)/2)
+//   if(target===array[mid]){
+//     console.log(mid)
+//   }
+//   else if(array[mid]<target)
+// {
+//  return BinarySearch(array,target,start,mid)
+// }else{
+//   return BinarySearch(array,target,mid+1,end)
+// }
+// }
+// BinarySearch(array,4,0,array.length)
+
+
 class node{
-  constructor(value){
-    this.value=value
-    this.next = null
-  }
+ constructor(value){
+   this.value=value
+   this.next=null
+ }
 }
 
-class linkedlist{
-
-  constructor(){
+class linkedList{
+   constructor(){
     this.head=null
     this.tail=null
-  }
+   }
 
-  add(data){
-    const newnode=new node(data)
+
+  insert(value){
+    let newnode=new node(value)
     if(!this.head){
-      this.head= newnode
-      this.tail=newnode
+      this.head=newnode
+      this.tail=newnode 
       return
     }
     this.tail.next=newnode 
-    this.tail=newnode   
-  }
-
-  addhead(value){
-    const newnode= new node(value)
-    newnode.next=this.head
-    this.head = newnode 
-  }
-
-  addAfter(value,newvalue){
-    const newnode  = new node(newvalue)
-    let curr = this.head
-    while(curr){
-       if(curr.value==value){
-      newnode.next=curr.next
-      curr.next=newnode 
-    }
-    curr=curr.next
-    }
-  }
-
-
-  insertAfter(value,newValue){
-    const newnode = new node(newValue)
-    let curr= this.head 
-    while(curr){
-      if(curr.value===value){
-        if(!curr.next){
-          curr.next=newnode 
-          this.tail=newnode
-        }
-        newnode.next=curr.next
-        curr.next=newnode
-      }
-      curr=curr.next
-    }
-  }
-  
-  print(){
-    let curr= this.head
-    while(curr){
-      console.log(curr.value)
-      curr=curr.next
-    }
-  }
-
-
-  reverse(){
-    if(!this.head)return 
-    let next= null
-    let prev= null
-    let curr= this.head
- while(curr){
-    next=curr.next 
-    curr.next=prev
-    prev=curr
-    curr= next
- }
- this.head= prev
+    this.tail=newnode 
   }
 
   middle(){
-    let mid= this.head
-    let temp= this.head
+    let mid=this.head
+    let temp=this.head
     while(temp && temp.next){
-      mid = mid.next
-      temp= temp.next.next
-    }
-  console.log(`mid value: ${mid.value}`) 
+     temp=temp.next.next
+     mid=mid.next
   }
+  console.log(`middle : `,mid.value)
+}
+ remove(value){
+  if(!this.head)return
+
+  if(this.head.value==value){
+    this.head=this.head.next
+  }
+  
+  let curr=this.head
+  while(curr){
+    if(curr.next.value==value){
+      curr.next=curr.next.next
+      if(!curr.next){
+         curr=this.tail
+      }
+      return
+    }
+    curr=curr.next
+  }
+
+ }
+reverse() {
+  let prev = null;
+  let curr = this.head;
+  let next = null;
+  while (curr) {
+    next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
+  }
+  this.head = prev;
+}
+
 
 }
 
-let l=new linkedlist()
-l.add(34)
-l.add(36)
-l.addhead(32)
+let l= new linkedList()
+
+function secondLargest(l){
+  let large = -Infinity
+  let secLarge= -Infinity
+  let current = l.head;
+  while(current){
+    if(current.value>large){
+      secLarge = large;
+      large= current.value
+    }else if(current.value>secLarge && current.value!=large){
+      secLarge=current.value
+    }
+    current = current.next;
+  }
+  console.log(`second largest`,secLarge)
+}
+
+
+l.insert(3)
+l.insert(21)
+l.insert(78)
+l.insert(23)
+l.insert(89)
+l.insert(9)
 l.middle()
-l.print()
-l.reverse()
-l.print()
-// console.log(l)
-l.print()
-
-
+console.log(l);
+secondLargest(l)
+console.log(`reverse`,l.reverse());
