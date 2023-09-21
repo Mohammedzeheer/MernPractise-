@@ -169,3 +169,21 @@ function factorial(n) {
 }
 
 console.log(factorial(5))
+
+
+
+// function binarySearch(a,target,start,end){
+//   let mid=Math.floor((start+end)/2)
+//   if(a[mid]==target){
+//      console.log(mid)
+//      return
+//   }
+//   else if(a[mid]<target){
+//      return binarySearch(a,target,mid+1,end)
+//   }else{
+//      return binarySearch(a,target,start,mid-1)
+//   }
+//  }
+//  let a=[2,3,4,5,6,67]
+//  target= 4
+//  binarySearch(a,target,0,a.length-1)

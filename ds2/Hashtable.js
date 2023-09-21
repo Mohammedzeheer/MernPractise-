@@ -31,6 +31,15 @@ class hashTable {
         }
     }
 
+      
+    insert(key, value) {
+      const index = this.hash(key);
+      if (!this.storage[index]) {
+        this.storage[index] = [];
+      }
+      this.storage[index].push([key, value]);
+    }
+    
     get(key) {
         const index = this.hash(key)
 
@@ -80,3 +89,62 @@ console.log("------------------------");
 table.remove("age")
 table.display()
 // console.log(table.get("age"));
+
+
+
+// class HashTable {
+//     constructor(size) {
+//       this.size = size;
+//       this.storage = new Array(size);
+//     }
+  
+//     hash(key) {
+//       let hash = 0;
+//       for (let i = 0; i < key.length; i++) {
+//         hash += key.charCodeAt(i);
+//       }
+//       return hash % this.size;
+//     }
+  
+//     insert(key, value) {
+//       const index = this.hash(key);
+//       if (!this.storage[index]) {
+//         this.storage[index] = [];
+//       }
+//       this.storage[index].push([key, value]);
+//     }
+  
+//     get(key) {
+//       const index = this.hash(key);
+//       if (this.storage[index]) {
+//         for (let i = 0; i < this.storage[index].length; i++) {
+//           const [storedKey, value] = this.storage[index][i];
+//           if (storedKey === key) {
+//             return value;
+//           }
+//         }
+//       }
+//       return undefined;
+//     }
+  
+//     remove(key) {
+//       const index = this.hash(key);
+//       if (this.storage[index]) {
+//         this.storage[index] = this.storage[index].filter(
+//           ([storedKey, _]) => storedKey !== key
+//         );
+//       }
+//     }
+//   }
+  
+//   // Example Usage
+//   const myHashTable = new HashTable(10);
+//   myHashTable.insert('name', 'John Doe');
+//   myHashTable.insert('age', 30);
+  
+//   console.log(myHashTable.get('name')); // Output: John Doe
+//   console.log(myHashTable.get('age')); // Output: 30
+  
+//   myHashTable.remove('age');
+//   console.log(myHashTable.get('age')); // Output: undefined
+  

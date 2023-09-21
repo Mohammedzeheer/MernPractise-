@@ -1,21 +1,21 @@
-//selection sort 
+// selection sort 
 
-// let a=[6,1,8,7,9,2]
-// let i;
-//  function selectionSort(){
-//     for (i=0;i<a.length-1;i++){
-//         let min=i
-//         for(let j=i+1;j<a.length;j++){
-//             if(a[j]<a[min]){
-//                 min=j
-//             }          
-//         }
-//         if(min!=i){
-//             [a[i] ,a[min]] =[a[min],a[i]]
-//           }
-//     }
-//     return a
-//  }
+let a=[6,1,8,7,9,2]
+let i;
+ function selectionSort(){
+    for (i=0;i<a.length-1;i++){
+        let min=i
+        for(let j=i+1;j<a.length;j++){
+            if(a[j]<a[min]){
+                min=j
+            }          
+        }
+        if(min!=i){
+            [a[i] ,a[min]] =[a[min],a[i]]
+          }
+    }
+    return a
+ }
 
 //  console.log(selectionSort());
 
@@ -73,3 +73,20 @@
 
 
 // console.log(a)
+
+function selection(a){
+    for(let i=0;i<a.length;i++){
+    let min=i
+    for(let j=0 ;j<a.length;j++){
+       if(a[j]<a[min]){
+         min = j
+       }
+    } 
+    if(i!=min){
+    [a[i],a[min]=a[min],a[i]]
+    }
+ }
+ return a
+}
+
+console.log(selection(a));

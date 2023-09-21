@@ -315,50 +315,157 @@
 
 // console.log(b);
 
-class minheap{
-  constructor(){
-    this.heap=[]
+// class minheap{
+//   constructor(){
+//     this.heap=[]
+//   }
+  
+//   parents(i){
+//     return Math.floor((i-2)/2)
+//   }
+
+//   leftChild(i){
+//     return 2*i+1
+//   }
+
+//   rightChild(i){
+//     return 2*i+2
+//   }
+
+//   size(){
+//    return this.heap.length-1
+//   }
+
+//   swap(i,j){
+//   [this.heap[i],this.heap[j]=this.heap[j],this.heap[i]]
+//   }
+
+//   insert(value){
+//     this.heap.push(value)
+//     this.heapup(this.size())
+//   }
+
+//   heapup(i){
+//     let parents=this.parents(i)
+//     while(i>0&& this.heap[i]<this.heap[parents]){
+//       this.swap(i,parents)
+//       i=parents
+//       parents=this.parents(i)
+//     }
+//   }
+
+//   heapyfy(array){
+//    for(let i=array.length;i>0;i--){
+//      this.heap=array[i]
+//      this.shiftdown()
+//    }
+//   }
+
+// }
+
+// class node{
+//  constructor(value){
+//   this.value=value
+//   this.left=null
+//   this.right=null;
+//  }
+// }
+
+// class bst{
+//   constructor(){
+//     this.root=null
+//   }
+
+//   insert(value){
+//     const newnode= new node(value)
+//     if(!this.root){
+//       this.root=newnode
+//     }else{
+//       this.insertnode(this.root,newnode)
+//     }
+//   }
+
+//   insertnode(root,newnode){
+//     if(root.value>newnode.value){
+//       if(root.left==null){
+//         root.left=newnode 
+//       }else{
+//         this.insertnode(root.left,newnode)
+//       }
+//     }else{
+//       if(root.right == null){
+//          root.right=newnode
+//       }else{
+//           this.insertnode(root.right,newnode)
+//       }  
+//     }
+//   }
+
+// }
+
+// const bs=new bst()
+
+// bs.insert(23)
+// bs.insert(5)
+// bs.insert(6)
+// bs.insert(32)
+// console.log(bs);
+
+class Graph {
+  constructor() {
+    this.adjlist = {}
+  }
+
+  addVertex(vertex) {
+    this.adjlist[vertex] = [];
+  }
+
+  addEdge(vertex1, vertex2) {
+    this.adjlist[vertex1].push(vertex2);
+    this.adjlist[vertex2].push(vertex1);
   }
   
-  parents(i){
-    return Math.floor((i-2)/2)
-  }
 
-  leftChild(i){
-    return 2*i+1
-  }
+  bfs(value) {
+    let visited = new Set();
+    let queue = [];
 
-  rightChild(i){
-    return 2*i+2
-  }
+    visited(value);
+    queue.push(value);
 
-  size(){
-   return this.heap.length-1
-  }
+    while (queue.length > 0) {
+      const currentVertex = queue.shift();
+      console.log(currentVertex);
+    }
 
-  swap(i,j){
-  [this.heap[i],this.heap[j]=this.heap[j],this.heap[i]]
-  }
-
-  insert(value){
-    this.heap.push(value)
-    this.heapup(this.size())
-  }
-
-  heapup(i){
-    let parents=this.parents(i)
-    while(i>0&& this.heap[i]<this.heap[parents]){
-      this.swap(i,parents)
-      i=parents
-      parents=this.parents(i)
+    const adjacentVertices = this.adjlist.get(currentVertex);
+    for (const neighbor of adjacentVertices) {
+      if (!visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.push(neighbor);
+      }
     }
   }
 
-  heapyfy(array){
-   for(let i=array.length;i>0;i--){
-     this.heap=array[i]
-     this.shiftdown()
-   }
-  }
-
+  print(){
+    for(const [vertex, adjacentVertices] of this.adjlist){
+      console.log(vertex, '->', adjacentVertices.join(', '));
+    }
 }
+
+ 
+}
+
+const g = new Graph();
+g.addVertex(2);
+g.addVertex(4); 
+g.addVertex(3);
+g.addVertex(5); 
+g.addVertex(6);
+g.addVertex(8); 
+g.addEdge(2, 4); 
+g.addEdge(2, 5); 
+g.addEdge(3, 5); 
+g.addEdge(6, 8); 
+console.log(g);
+// g.print()
