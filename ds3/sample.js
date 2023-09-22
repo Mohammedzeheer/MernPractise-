@@ -411,61 +411,85 @@
 // bs.insert(32)
 // console.log(bs);
 
-class Graph {
-  constructor() {
-    this.adjlist = {}
-  }
+// class Graph {
+//   constructor() {
+//     this.adjlist = {}
+//   }
 
-  addVertex(vertex) {
-    this.adjlist[vertex] = [];
-  }
+//   addVertex(vertex) {
+//     this.adjlist[vertex] = [];
+//   }
 
-  addEdge(vertex1, vertex2) {
-    this.adjlist[vertex1].push(vertex2);
-    this.adjlist[vertex2].push(vertex1);
-  }
+//   addEdge(vertex1, vertex2) {
+//     this.adjlist[vertex1].push(vertex2);
+//     this.adjlist[vertex2].push(vertex1);
+//   }
   
 
-  bfs(value) {
-    let visited = new Set();
-    let queue = [];
+//   bfs(value) {
+//     let visited = new Set();
+//     let queue = [];
 
-    visited(value);
-    queue.push(value);
+//     visited(value);
+//     queue.push(value);
 
-    while (queue.length > 0) {
-      const currentVertex = queue.shift();
-      console.log(currentVertex);
-    }
+//     while (queue.length > 0) {
+//       const currentVertex = queue.shift();
+//       console.log(currentVertex);
+//     }
 
-    const adjacentVertices = this.adjlist.get(currentVertex);
-    for (const neighbor of adjacentVertices) {
-      if (!visited.has(neighbor)) {
-        visited.add(neighbor);
-        queue.push(neighbor);
-      }
-    }
-  }
+//     const adjacentVertices = this.adjlist.get(currentVertex);
+//     for (const neighbor of adjacentVertices) {
+//       if (!visited.has(neighbor)) {
+//         visited.add(neighbor);
+//         queue.push(neighbor);
+//       }
+//     }
+//   }
 
-  print(){
-    for(const [vertex, adjacentVertices] of this.adjlist){
-      console.log(vertex, '->', adjacentVertices.join(', '));
-    }
-}
+//   print(){
+//     for(const [vertex, adjacentVertices] of this.adjlist){
+//       console.log(vertex, '->', adjacentVertices.join(', '));
+//     }
+// }
 
  
+// }
+
+// const g = new Graph();
+// g.addVertex(2);
+// g.addVertex(4); 
+// g.addVertex(3);
+// g.addVertex(5); 
+// g.addVertex(6);
+// g.addVertex(8); 
+// g.addEdge(2, 4); 
+// g.addEdge(2, 5); 
+// g.addEdge(3, 5); 
+// g.addEdge(6, 8); 
+// console.log(g);
+// // g.print()
+
+
+class graph {
+  constructor(){
+    this.adjList={}
+  }
+  addVertex(vertex){
+    this.adjList[vertex]=[]
+  }
+
+  addEdge(vertex1,vertex2){
+    this.adjList[vertex1].push(vertex2)
+    this.adjList[vertex2].push(vertex1)
+  }
 }
 
-const g = new Graph();
+const g = new graph();
 g.addVertex(2);
 g.addVertex(4); 
 g.addVertex(3);
-g.addVertex(5); 
-g.addVertex(6);
-g.addVertex(8); 
-g.addEdge(2, 4); 
-g.addEdge(2, 5); 
-g.addEdge(3, 5); 
-g.addEdge(6, 8); 
+g.addEdge(2,4); 
+g.addEdge(4,3); 
+
 console.log(g);
-// g.print()
