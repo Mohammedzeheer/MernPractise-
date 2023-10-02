@@ -14,3 +14,19 @@ function doSomethingAsync(callback) {
   
   console.log("Waiting for the task to complete...");
   
+
+
+
+
+  ////callback
+function add(number1, number2,callback)
+{
+    console.log(number1+number2);
+    callback()
+}
+
+function display(){
+    console.log(" this is display funcion")
+}
+
+add(23,24,display)

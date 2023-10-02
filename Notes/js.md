@@ -698,6 +698,15 @@ EVENT POOLING
     console.log(event); // The same event object is reused for every click event
   });
 
+-----------------------------------------------------------------------------
 
+BOM
+
+Browser Object Model means accessing the properties of the web browser.
+BOM has a root object called window-object 
+It is used by JavaScript to interact with the browser and control its behavior.
+
+BOM is the window object. This object contains properties and methods that allow 
+JavaScript to access and control the browser window, such as its size, position, and title.
 
 -------------------------- MOHAMMED ZEHEER------------------------------------
