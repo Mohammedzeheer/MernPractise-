@@ -572,5 +572,33 @@ REACT MEMO
 
 ----------------------------------------------------------------------------------------------------------
 
+Redux Lifecycle:
+
+Redux is a predictable state container for JavaScript apps. It has three main parts: the store, actions, and reducers. 
+
+The Redux lifecycle involves:
+
+Action: Actions are payloads of information that send data from your application to your Redux store. 
+They are the only source of information for the store.
+Reducer: Reducers specify how the application's state changes in response to actions sent to the store.
+Store: The store holds the state of your application.
+
+----------------------------------------------------------------------------------------------------------
+Why JWT is called JSON:
+
+JWT stands for JSON Web Token. It's called JSON because the token itself is a JSON object that is base64 
+encoded and digitally signed for verification.
+
+A JWT consists of three parts separated by dots:
+
+Header: Contains metadata about the token (like the type and the signing algorithm).
+Payload: Contains the claims (statements) about an entity (typically, the user) and additional data.
+Signature: Used to verify the authenticity of the token.
+
+Eg:
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+
+----------------------------------------------------------------------------------------------------------
 
 -----------------------------------Mohammed zeheer -------------------------------------------------------

@@ -681,6 +681,16 @@ ____________________
 
 -------------------------------------------------------------------------------------------------------
 
+Journaling:
+
+Journaling is a technique used in databases to maintain a record of changes. It involves keeping a journal or log of all the transactions that occur in the database. This is crucial for ensuring data integrity, especially in the event of a system crash or failure.
+
+
+// Enabling journaling
+db.adminCommand({setParameter: 1, journalCommitInterval: 100});
+
+// Adding a document to a collection
+db.myCollection.insertOne({name: "John Doe", age: 30});
 
 ____________________________________  NOTES _____________________________________________________________
 

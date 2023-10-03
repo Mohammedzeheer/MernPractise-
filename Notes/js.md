@@ -711,7 +711,7 @@ JavaScript to access and control the browser window, such as its size, position,
 
 -----------------------------------------------------------------------------
 
-Typeof null and undefined
+Typeof NULL and UNDEFINED
 
  typeof is a JavaScript operator that returns the type of a variable or expression.
  typeof null returns 'object' because in the early versions of JavaScript,
@@ -721,6 +721,32 @@ Example:
 
 typeof null;        // Output: 'object'
 typeof undefined;   // Output: 'undefined'
+-----------------------------------------------------------------------------
+
+UNARY OPERATORS
+
+Unary operators in JavaScript are operators that require one operand. 
+They are typically written before or after their operand, and they perform a single operation on that operand.
+
+const x = !true; // false
+const y = -5; // -5
+const z = +"string"; // "string"
+
+BINARY OPERATORS
+
+binary operators in JavaScript are operators that require two operands.
+They are typically written between their operands, and they perform an operation on both operands.
+
+const a = 1 + 2; // 3
+const b = 3 * 4; // 12
+const c = 5 / 2; // 2.5
+const d = 6 % 5; // 1
+-----------------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------------
 
 
 -------------------------- MOHAMMED ZEHEER------------------------------------
