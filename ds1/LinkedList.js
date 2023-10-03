@@ -37,6 +37,14 @@ class linkedlist {
         }
      }
 
+    
+      deleteHead() {
+        if (!this.head) {
+          return; // Empty list, nothing to delete
+        }      
+        this.head = this.head.next; 
+      }
+
 
       //--- INSERT VALUE BEFORE ANY VALUE  ------
      insertBefore(value, newvalue) {
@@ -124,7 +132,28 @@ class linkedlist {
         } 
      }
   
+
+     
+     deleteEnd() {
+        if (!this.head) {
+          return; // Empty list, nothing to delete
+        }
+      
+        if (!this.head.next) {
+          this.head = null; // Only one node in the list, remove it
+          return;
+        }
+      
+        let curr = this.head;
+        while (curr.next.next) {
+          curr = curr.next;
+        }
+      
+        curr.next = null; // Remove the last node
+      }
   
+
+    //REVERSE
      reverse() {
         let temp = this.head;
         let prev = null;

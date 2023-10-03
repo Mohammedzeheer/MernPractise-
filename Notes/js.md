@@ -709,4 +709,18 @@ It is used by JavaScript to interact with the browser and control its behavior.
 BOM is the window object. This object contains properties and methods that allow 
 JavaScript to access and control the browser window, such as its size, position, and title.
 
+-----------------------------------------------------------------------------
+
+Typeof null and undefined
+
+ typeof is a JavaScript operator that returns the type of a variable or expression.
+ typeof null returns 'object' because in the early versions of JavaScript,
+ null was implemented as an object.
+
+Example:
+
+typeof null;        // Output: 'object'
+typeof undefined;   // Output: 'undefined'
+
+
 -------------------------- MOHAMMED ZEHEER------------------------------------

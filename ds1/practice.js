@@ -310,102 +310,188 @@ const { link } = require("fs")
 // BinarySearch(array,4,0,array.length)
 
 
-class node{
- constructor(value){
-   this.value=value
-   this.next=null
- }
+// class node{
+//  constructor(value){
+//    this.value=value
+//    this.next=null
+//  }
+// }
+
+// class linkedList{
+//    constructor(){
+//     this.head=null
+//     this.tail=null
+//    }
+
+
+//   insert(value){
+//     let newnode=new node(value)
+//     if(!this.head){
+//       this.head=newnode
+//       this.tail=newnode 
+//       return
+//     }
+//     this.tail.next=newnode 
+//     this.tail=newnode 
+//   }
+
+//   middle(){
+//     let mid=this.head
+//     let temp=this.head
+//     while(temp && temp.next){
+//      temp=temp.next.next
+//      mid=mid.next
+//   }
+//   console.log(`middle : `,mid.value)
+// }
+//  remove(value){
+//   if(!this.head)return
+
+//   if(this.head.value==value){
+//     this.head=this.head.next
+//   }
+  
+//   let curr=this.head
+//   while(curr){
+//     if(curr.next.value==value){
+//       curr.next=curr.next.next
+//       if(!curr.next){
+//          curr=this.tail
+//       }
+//       return
+//     }
+//     curr=curr.next
+//   }
+
+//  }
+// reverse() {
+//   let prev = null;
+//   let curr = this.head;
+//   let next = null;
+//   while (curr) {
+//     next = curr.next;
+//     curr.next = prev;
+//     prev = curr;
+//     curr = next;
+//   }
+//   this.head = prev;
+// }
+
+
+// }
+
+// let l= new linkedList()
+
+// function secondLargest(l){
+//   let large = -Infinity
+//   let secLarge= -Infinity
+//   let current = l.head;
+//   while(current){
+//     if(current.value>large){
+//       secLarge = large;
+//       large= current.value
+//     }else if(current.value>secLarge && current.value!=large){
+//       secLarge=current.value
+//     }
+//     current = current.next;
+//   }
+//   console.log(`second largest`,secLarge)
+// }
+
+
+// l.insert(3)
+// l.insert(21)
+// l.insert(78)
+// l.insert(23)
+// l.insert(89)
+// l.insert(9)
+// l.middle()
+// console.log(l);
+// secondLargest(l)
+// console.log(`reverse`,l.reverse());
+
+
+class node {
+constructor(value){
+  this.value=value
+  this.left=null
+  this.right=null
+}
 }
 
-class linkedList{
-   constructor(){
-    this.head=null
-    this.tail=null
-   }
 
+class bst {
+  constructor(){
+    this.root=null
+  }
 
-  insert(value){
-    let newnode=new node(value)
-    if(!this.head){
-      this.head=newnode
-      this.tail=newnode 
-      return
+  add(value){
+    let newnode = new node(value)
+    if(!this.root){
+      this.root=newnode 
+    }else{
+      this.addRecursion(this.root,newnode)
     }
-    this.tail.next=newnode 
-    this.tail=newnode 
   }
 
-  middle(){
-    let mid=this.head
-    let temp=this.head
-    while(temp && temp.next){
-     temp=temp.next.next
-     mid=mid.next
-  }
-  console.log(`middle : `,mid.value)
-}
- remove(value){
-  if(!this.head)return
-
-  if(this.head.value==value){
-    this.head=this.head.next
+  addRecursion(root,newnode)
+  {  
+    if(root.value<newnode.value){
+      if(root.left==null){
+        root.left=newnode 
+      }else{
+        this.addRecursion(root.left,newnode)
+      }
+    }else{
+       if(root.right==null){
+        root.right=newnode
+       }else{
+        this.addRecursion(root.right,newnode)
+       }
+    }
   }
   
-  let curr=this.head
-  while(curr){
-    if(curr.next.value==value){
-      curr.next=curr.next.next
-      if(!curr.next){
-         curr=this.tail
-      }
-      return
-    }
-    curr=curr.next
-  }
-
- }
-reverse() {
-  let prev = null;
-  let curr = this.head;
-  let next = null;
-  while (curr) {
-    next = curr.next;
-    curr.next = prev;
-    prev = curr;
-    curr = next;
-  }
-  this.head = prev;
+  
+  inorder(){
+  this.inordertraversal(this.root)
 }
 
 
+preorder(){
+  this.preordertraversal(this.root)
 }
 
-let l= new linkedList()
-
-function secondLargest(l){
-  let large = -Infinity
-  let secLarge= -Infinity
-  let current = l.head;
-  while(current){
-    if(current.value>large){
-      secLarge = large;
-      large= current.value
-    }else if(current.value>secLarge && current.value!=large){
-      secLarge=current.value
-    }
-    current = current.next;
+preordertraversal(root){
+  if(!root){
+    return
   }
-  console.log(`second largest`,secLarge)
+
+  this.preordertraversal(root.left)
+  this.preordertraversal(root.right)
+  console.log(root.value)
 }
 
 
-l.insert(3)
-l.insert(21)
-l.insert(78)
-l.insert(23)
-l.insert(89)
-l.insert(9)
-l.middle()
-console.log(l);
-secondLargest(l)
-console.log(`reverse`,l.reverse());
+inordertraversal(root){ 
+  if(!root){
+    return 
+  }
+    this.inordertraversal(root.left)
+    console.log(root.value)
+    this.inordertraversal(root.right)
+}
+}
+
+
+
+
+
+let b=new bst()
+
+b.add(23)
+b.add(33)
+b.add(67)
+
+b.preorder()
+
+console.log(b)
