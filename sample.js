@@ -120,4 +120,23 @@
 //     console.log('Unknown fruit.');
 // }
 
+// let array = []
+// console.log(typeof(array));
+
+// let a =[3,5,6,1,21,6]
+  
+// for(let i=1;i<a.length;i++){
+//    let j= i-1
+//    let temp= a[i]
+//   while(j>=0 && a[j]>=temp){
+//     a[j+1]=a[j]
+//     j--
+//   }
+//  a[j+1]=temp
+//  console.log(a);
+//   }
+
+
+
+ 
 

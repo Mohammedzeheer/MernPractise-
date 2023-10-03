@@ -5,6 +5,20 @@
   for creating dynamic and interactive web content. It runs on the client-side 
   (in web browsers) and server-side (with Node.js).
 
+  ADVANTAGES OF JS
+     
+     versatility (client side & server side)
+     more libraries and framework 
+     easy to learn 
+     asynchronous programming for efficiency 
+     interactive user experiens 
+
+  DISADVANTAGES OF JS   
+     
+     Different browser interpretation
+     single inheritance 
+     client side security risk
+
 -----------------------------------------------------------------------------
 
  VAR , LET ,CONST

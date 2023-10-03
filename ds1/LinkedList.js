@@ -168,6 +168,11 @@ class linkedlist {
         this.head = prev;
       }
 
+
+      reverse1() {
+        this.reverseRecursive(this.head);
+      }
+
       reverseRecursive(node) {
         if (!node || !node.next) {
           this.head = node;
@@ -178,9 +183,7 @@ class linkedlist {
         node.next = null;
       }
     
-      reverse1() {
-        this.reverseRecursive(this.head);
-      }
+     
     
     // PRINT LINKED LIST ------------------
     print(){

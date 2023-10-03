@@ -1165,6 +1165,34 @@ ____________
 
 ------------------------------------------------------------------------------------------------------------
 
+WEB HOOK 
+A webhook is a type of API endpoint that allows two applications to communicate with each other asynchronously. When an event occurs in one application, it can trigger a webhook to be sent to the other application. The receiving application can then take some action based on the event data.
+
+------------------------------------------------------------------------------------------------------------
+
+REST:
+
+  Architecture for networked applications.
+  Stateless, client-server communication.
+  Each resource has a unique URL endpoint.
+  Server determines response data structure.
+  May require versioning for changes.
+
+
+GraphQL:
+
+  Query language for APIs.
+  Clients request specific fields and relationships.
+  Clients define response structure.
+  Often doesn't require versioning.
+  Great for fine-grained control and complex data.
+
+------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
 
 ---------------------------------------------- NOTES  -----------------------------------------------------

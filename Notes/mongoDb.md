@@ -33,6 +33,22 @@ ADVANTAGES OF MONGODB
 
 it is non SQL so it is faster than SQL
 
+scalablity(horizontal scaling), 
+High perfomance
+High Speed and Higher Availability. 
+Simplicity. 
+Easy Environment and a Quick Set-up. 
+Flexibility. 
+Sharding. 
+
+
+DISADVANTAGES OF MONGODB
+------------------------
+ Transactions.
+ Joins.  
+ high memmory usage, 
+ limited document size(16MB), 
+ limited nesting(100levels)
 
 --------------------------------------------------------------------------------------------------
 
