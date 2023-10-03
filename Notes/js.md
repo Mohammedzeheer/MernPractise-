@@ -742,11 +742,53 @@ const b = 3 * 4; // 12
 const c = 5 / 2; // 2.5
 const d = 6 % 5; // 1
 -----------------------------------------------------------------------------
+BITWISE OPERATOR 
+
+Bitwise operators in JavaScript are used to perform operations on the individual bits of a number. 
+They are similar to logical operators, but they work on bits instead of boolean values.
+
+Bitwise AND ( & ): Returns 1 if both bits are 1, otherwise returns 0.
+`Bitwise OR ( | ): Returns 1 if either bit is 1, otherwise returns 0.`
+Bitwise XOR ( ^ ): Returns 1 if the bits are different, otherwise returns 0.
+`Bitwise NOT ( ~ ): Flips all the bits in a number`.
+Left shift ( << ): Shifts all the bits in a number to the left by a specified number of positions.
+`Right shift ( >> ): Shifts all the bits in a number to the right by a specified number of positions.`
 
 
+const a = 5; // 00000000000000000000000000000101
+const b = 3; // 00000000000000000000000000000011
+
+ `Bitwise AND    console.log(a & b);   // 00000000000000000000000000000001`
+  Bitwise OR     console.log(a | b);   // 00000000000000000000000000000111
+ `Bitwise XOR    console.log(a ^ b);   // 00000000000000000000000000000110`
+  Bitwise NOT    console.log(~a);      // 11111111111111111111111111111010
+ `Left shift     console.log(a << 1);  // 00000000000000000000000000001010`
+  Right shift    console.log(a >> 1);  // 00000000000000000000000000000011
 
 
 -----------------------------------------------------------------------------
+
+FACTORY FUNCTION
+
+A factory function in JavaScript is a function that creates and returns a new object. 
+It is similar to a constructor function, but it does not require the new keyword.
+
+
+        function createUser(name, age) {
+          return {
+            name,
+            age
+          };
+        }
+
+   const user = createUser("Alice", 25);
+  `console.log(user); // { name: 'Alice', age: 25 }`
+
+
+
+
+
+
 
 
 -------------------------- MOHAMMED ZEHEER------------------------------------

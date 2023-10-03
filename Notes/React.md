@@ -451,20 +451,18 @@ ____
 
   The axios cancel token API is based on the withdrawn cancelable promises proposal.    
   A CancellationToken enables cooperative cancellation between threads, thread pool work items, or Task objects
-
 ----------------------------------------------------------------------------------------------------------
+
  USE SELECTOR
  ____________
  
   useSelector ​Allows you to extract data from the Redux store state for use in this component
-
 ----------------------------------------------------------------------------------------------------------
  KEY
  ____
 
   A key is a unique identifier. it is used to identify which items have changed, 
   updated, or deleted from the Lists
-
 ----------------------------------------------------------------------------------------------------------
 IMMUTABLE
 _________
@@ -487,14 +485,13 @@ ____________
 
   The Menthod bind() is an inbuilt method in React that is used to pass the data as an argument 
   to the function of a class based component.
-
 ----------------------------------------------------------------------------------------------------------
+
 CONDITIONAL RENDERING 
 _____________________
 
    Conditional rendering Use JavaScript operators like if or the conditional operator to create elements 
    representing the current state, and let React update the UI to match them.
-
 ----------------------------------------------------------------------------------------------------------
 
 Reconciliation.
@@ -509,7 +506,6 @@ _______________
 DIFFING
 _______
    Process of identifying the differences between the virtual DOM tree before and after an update. 
-
 ----------------------------------------------------------------------------------------------------------
 SUSPENCE
 ________
@@ -600,5 +596,20 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 
 ----------------------------------------------------------------------------------------------------------
+ AXIOS AND FETCH 
+
+  If you need a simple, built-in solution and prefer a lightweight approach, use fetch.
+
+  If you want a more feature-rich library with automatic error handling, interceptors, and support for older browsers, go for Axios.
+
+
+----------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------
+
 
 -----------------------------------Mohammed zeheer -------------------------------------------------------

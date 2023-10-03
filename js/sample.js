@@ -140,51 +140,55 @@
 // let result= Quicksort(a)
 // console.log(result)
 
-function MergeSort(a, lb, ub) {
-    if (lb < ub) {
-      let mid = Math.floor((lb + ub) / 2);
-      MergeSort(a, lb, mid);
-      MergeSort(a, mid + 1, ub);
-      Merge(a, lb, mid, ub);
-    }
-    return a;
-  }
+// function MergeSort(a, lb, ub) {
+//     if (lb < ub) {
+//       let mid = Math.floor((lb + ub) / 2);
+//       MergeSort(a, lb, mid);
+//       MergeSort(a, mid + 1, ub);
+//       Merge(a, lb, mid, ub);
+//     }
+//     return a;
+//   }
   
-  function Merge(a, lb, mid, ub) {
-    let i = lb;
-    let j = mid + 1;
-    let k = lb;
-    let b = [];
+//   function Merge(a, lb, mid, ub) {
+//     let i = lb;
+//     let j = mid + 1;
+//     let k = lb;
+//     let b = [];
   
-    while (i <= mid && j <= ub) {
-      if (a[i] < a[j]) {
-        b[k] = a[i];
-        i++;
-      } else {
-        b[k] = a[j];
-        j++;
-      }
-      k++;
-    }
+//     while (i <= mid && j <= ub) {
+//       if (a[i] < a[j]) {
+//         b[k] = a[i];
+//         i++;
+//       } else {
+//         b[k] = a[j];
+//         j++;
+//       }
+//       k++;
+//     }
   
-    while (i <= mid) {
-      b[k] = a[i];
-      i++;
-      k++;
-    }
+//     while (i <= mid) {
+//       b[k] = a[i];
+//       i++;
+//       k++;
+//     }
   
-    while (j <= ub) {
-      b[k] = a[j];
-      j++;
-      k++;
-    }
+//     while (j <= ub) {
+//       b[k] = a[j];
+//       j++;
+//       k++;
+//     }
   
-    for (let c = lb; c <= ub; c++) {
-      a[c] = b[c];
-    }
-  }
+//     for (let c = lb; c <= ub; c++) {
+//       a[c] = b[c];
+//     }
+//   }
   
-  const a = [3, 4, 2, 1, 5, 6];
-  let result = MergeSort(a, 0, a.length - 1);
-  console.log(result);
+//   const a = [3, 4, 2, 1, 5, 6];
+//   let result = MergeSort(a, 0, a.length - 1);
+//   console.log(result);
+
+(function(){
+  console.log('iam invokedfunction');
+})()
   

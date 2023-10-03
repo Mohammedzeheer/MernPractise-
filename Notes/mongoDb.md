@@ -676,9 +676,8 @@ ____________________
 
    // Assuming we have a MongoDB collection named "routes"
 
-    const query = { origin: "City A", destination: "City B" };
-    const result = await routesCollection.find(query).toArray();
-
+     const query = { origin: "City A", destination: "City B" };
+  .  const result = await routesCollection.find(query).toArray();
 -------------------------------------------------------------------------------------------------------
 
 Journaling:
