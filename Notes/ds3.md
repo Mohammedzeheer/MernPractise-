@@ -1,10 +1,21 @@
   TREE
  ------
+ represented nodes connected by edges and stored heirarchical
 
-   Degree of a Node: The total count of subtrees attached to that node is called the degree of the node.
-   -----------------------------------------------------------------------------
+ types of tree :
+    Binary tree
+    binary search tree
+    avl tree
+    heap
+    trie
+   
+   Depth of tree:  No of edges in path from root to element 
+  -----------------------------------------------------------------------------
    Height of the Tree: The height of a tree is the length of the longest path from the root of the tree 
-                       to a leaf node of the tree.
+                       to a leaf node of the tree. (count of edges)
+   -----------------------------------------------------------------------------
+   Degree of a Node: The total count of subtrees attached to that node is called the degree of the node.
+  
    -----------------------------------------------------------------------------
    Height of a node: The height of a node can be defined as the length of the longest path from the node
                      to a leaf node of the tree.
@@ -82,6 +93,18 @@ ___________
      2     3
     / \   / \
    4   5 6   7
+
+--------------------------------------------------------------------------------------------------------------
+AVL TREE(Self balanced binary search tree)
+ 
+ factor of balaced = height of left subtree - hight of right sub tree  is must be ( -1 or 0 or 1)
+
+ convert to avl tree = RR rotation , RL rotation , LL rotation , LR Rotation
+ 
+  RR rotation  : anti clock wise  rotate the node 
+  LL rotation  : clock wise rotatate the node
+  RL rotation  : convert to RR  then  anti clock wise  rotate the node 
+  LR Rotation  : conver to LL then clock wise rotatate the node
 
 --------------------------------------------------------------------------------------------------------------
 

@@ -136,6 +136,29 @@
 //  console.log(a);
 //   }
 
+// const a= ((b)=>{
+//   setTimeout(()=>{
+//     console.log('hello ')
+//   },3000)
+//    b()
+// })
+
+// const b=(()=>{
+//   console.log(1+5)
+// })
+// a(b)
+
+// const a=(()=>{
+//   let ineterval=setInterval(()=>{
+//     console.log('hello')
+//   },2000)
+
+//   return () => {
+//     clearInterval(ineterval);
+//     console.log('Interval cleared');
+//   };
+
+// })
 
 
  

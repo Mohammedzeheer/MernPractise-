@@ -49,21 +49,21 @@
 
 
 
-// ///binary search in recursion -----------------------------------
-// function binarySearchRecursive(arr, find, start, end) {
-//   if (start > end) {
-//     return -1;
-//   }
-//   let mid = Math.floor(start + (end - start) / 2);
+///binary search in recursion -----------------------------------
+function binarySearchRecursive(arr, find, start, end) {
+  if (start > end) {
+    return -1;
+  }
+  let mid = Math.floor(start + (end - start) / 2);
 
-//   if (arr[mid] === find) {
-//     return mid;
-//   } else if (arr[mid] < find) {
-//     return binarySearchRecursive(arr, find, mid + 1, end);
-//   } else {
-//     return binarySearchRecursive(arr, find, start, mid - 1);
-//   }
-// }
+  if (arr[mid] === find) {
+    return mid;
+  } else if (arr[mid] < find) {
+    return binarySearchRecursive(arr, find, mid + 1, end);
+  } else {
+    return binarySearchRecursive(arr, find, start, mid - 1);
+  }
+}
 
 // // Example usage:
 // const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];

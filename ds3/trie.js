@@ -1,3 +1,5 @@
+// *TRIE*
+
 class TrieNode {
     constructor() {
         this.children = {};

@@ -110,7 +110,6 @@ _____
   Hooks in React are special functions that allow you to add state and other React features to function components.
   They simplify component development, promote code reuse, and provide an alternative to class components.
 
-
   Hooks in React are special functions that enhance functional components:
 
   useState: Adds state to functional components.
@@ -503,44 +502,44 @@ _______________
    It ensures that only the necessary parts of the DOM are updated to reflect the changes in a 
    component's state or props.
 ----------------------------------------------------------------------------------------------------------
+
 DIFFING
 _______
    Process of identifying the differences between the virtual DOM tree before and after an update. 
 ----------------------------------------------------------------------------------------------------------
+
 SUSPENCE
 ________
 
   Suspense is a new feature that lets your component “wait” for something before it can render.
-
 ----------------------------------------------------------------------------------------------------------
+
 DISPATCHING
 ___________
 
   Dispatching actions in Redux is the fundamental method of updating a Redux store's state .
-
 ----------------------------------------------------------------------------------------------------------
 
 SHADOW DOM
 ___________
   Shadow DOM allows hidden DOM trees to be attached to elements in the regular DOM tree
-
 ----------------------------------------------------------------------------------------------------------
+
 RENDER PROPS 
 _____________
   render prop refers to a technique for sharing code between React components using a prop whose value is a function
-
 ----------------------------------------------------------------------------------------------------------
 BATCHING
 ________
   React uses batching to group state updates within event handlers and inbuilt hooks.
 
 ----------------------------------------------------------------------------------------------------------
+
 SYNTHETIC EVENTS
 
    Synthetic events in React are a uniform way to handle events across different browsers. 
    They wrap native browser events to provide a consistent interface. This helps avoid cross-browser 
    compatibility issues when working with events in React components.
-
 ----------------------------------------------------------------------------------------------------------
 
 CUSTOM HOOK
@@ -550,7 +549,6 @@ CUSTOM HOOK
 
   For example, you could create a custom hook to handle counting. Then, you can use this hook in different 
   components to keep track of numbers without having to rewrite the same logic each time. 
-
 ----------------------------------------------------------------------------------------------------------
 
 REACT MEMO
@@ -563,9 +561,7 @@ REACT MEMO
      return <div>{name}</div>;
     });
 
-    export default MyComponent;
-
-
+  .  export default MyComponent;
 ----------------------------------------------------------------------------------------------------------
 
 Redux Lifecycle:
@@ -579,7 +575,14 @@ They are the only source of information for the store.
 Reducer: Reducers specify how the application's state changes in response to actions sent to the store.
 Store: The store holds the state of your application.
 
+steps: 
+ 1) Create a Redux store. `The store is a JavaScript object that holds the application's state`.
+ 2) Define reducers. `Reducers are functions that calculate the new state based on the current state and an action.`
+ 3) Dispatch actions. `Actions are plain objects that describe what happened in the application.`
+ 4) Subscribe to state changes. `Components can subscribe to state changes to be notified when the state changes`.
+.5) Update the UI. `Components can update their UI based on the latest state.`
 ----------------------------------------------------------------------------------------------------------
+
 Why JWT is called JSON:
 
 JWT stands for JSON Web Token. It's called JSON because the token itself is a JSON object that is base64 
@@ -593,16 +596,13 @@ Signature: Used to verify the authenticity of the token.
 
 Eg:
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-
-
 ----------------------------------------------------------------------------------------------------------
+
  AXIOS AND FETCH 
 
   If you need a simple, built-in solution and prefer a lightweight approach, use fetch.
 
   If you want a more feature-rich library with automatic error handling, interceptors, and support for older browsers, go for Axios.
-
-
 ----------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------

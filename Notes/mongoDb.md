@@ -1,5 +1,3 @@
-
-
                                             MONGO DB
 _____________________________________________________________________________________________
 
@@ -7,8 +5,11 @@ ________________________________________________________________________________
  What is mongoDB?
 ____________________
 
+ MongoDB is a document-oriented database management system (DBMS) 
+ that uses JSON-like documents with optional schemas
+
 - It is a document database.
-- It is an NoSQL data base.`
+- It is an NoSQL data base.
 
 Document database
 -----------------
@@ -698,8 +699,13 @@ ____________________
 
 Journaling:
 
-Journaling is a technique used in databases to maintain a record of changes. It involves keeping a journal or log of all the transactions that occur in the database. This is crucial for ensuring data integrity, especially in the event of a system crash or failure.
+Journaling in MongoDB is a process of writing all write operations to an on-disk journal before they are applied to the database data files. This ensures that the database will be in a consistent state even if MongoDB crashes unexpectedly.
 
+`how journaling works in MongoDB:`
+
+- When a write operation is performed, MongoDB writes the operation to an in-memory buffer.
+- Once the buffer full, or after certain interval of time, MongoDB writes contents buffer to the journal file.
+- Once the journal file is written, MongoDB applies the write operations to the database data files.
 
 // Enabling journaling
 db.adminCommand({setParameter: 1, journalCommitInterval: 100});

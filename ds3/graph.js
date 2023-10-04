@@ -32,6 +32,31 @@ class Graph {
       }
     }
   }
+ 
+
+  dfs(startingVertex) {
+    let visited = new Set();
+    let stack = [];
+
+    stack.push(startingVertex);
+
+    while (stack.length > 0) {
+        const currentVertex = stack.pop();
+
+        if (!visited.has(currentVertex)) {
+            visited.add(currentVertex);
+            console.log(currentVertex);
+        }
+
+        const adjacentVertices = this.adjlist.get(currentVertex);
+        for (const neighbor of adjacentVertices) {
+            if (!visited.has(neighbor)) {
+                stack.push(neighbor);
+            }
+        }
+    }
+}
+
 
   print(){
     for(const [vertex, adjacentVertices] of this.adjlist){

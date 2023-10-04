@@ -60,22 +60,22 @@ Three type's of modules
 
 > Core module
 
-- It is a Built-in module's 
-- It'll install with when we install Node.JS
-- We can accsess this module using require() in our page
+    - It is a Built-in module's 
+    - It'll install with when we install Node.JS
+    - We can accsess this module using require() in our page
 
 > Local modules
 
-- We can create our own modules and we can use it in our Project
-- We can export these module using module.Exports
-- We can use it in our page using reqire()
+    - We can create our own modules and we can use it in our Project
+    - We can export these module using module.Exports
+    - We can use it in our page using reqire()
 
 > NPM Third-party Modules
 
-- When we install node also we get NPM 
-- Node Package Manager
-- It allows you to install and use
-- We can download this module's from NPM.com
+    - When we install node also we get NPM 
+    - Node Package Manager
+    - It allows you to install and use
+    - We can download this module's from NPM.com
 
  ------------------------------------------------------------------------------------------------------------------
   
@@ -357,6 +357,7 @@ parse()
 5. extname()   -file extension name
 
 ------------------------------------------------------------------------------------------------------------
+
 07. HTTP module 
 _________________
 
@@ -365,16 +366,13 @@ _________________
   - using for Trasfer files 
   - We can create server, it listen to server ports and gives a response back to the clint
 
-
   > process.env.PORT   it is for check is server giving you any port
 
   > writeHead()        used for define type of content is this 
-  
     It take two arguments  
     - status code  eg: 200, 400, 404
     - content-type eg: html , txt , json
-
-    writeHead( 200 , " Content-type : "text/htm" )
+    `writeHead( 200 , " Content-type : "text/htm" )`
 
   > listen()           used for define port.
 
@@ -388,7 +386,7 @@ _________________
 08 Timer methods 
 _________________
 
-- it is a global objects we dont need of speciel installation
+- it is a global objects we dont need of special installation
 
 set timer functions
 --------------------
@@ -788,7 +786,7 @@ ______________________
   ----------------------
 
   > Informaitonal Responses  100 - 199
-  > Succussfull responses   200 - 299
+  > Succussfull responses    200 - 299
   > Redirects                300 - 399
   > Client Errors            400 - 499 
   > Server Errors            500 - 599
@@ -1189,7 +1187,9 @@ GraphQL:
 
 ------------------------------------------------------------------------------------------------------------
 
+CLUSTER WORKER 
 
+Cluster workers are child processes that are spawned by the Node.js cluster module. They run simultaneously and share the same server port. Each worker has its own event loop, memory, and V8 instance. Workers communicate with each other and with the parent process using IPC (Inter-process communication).
 
 
 
@@ -1264,7 +1264,7 @@ _child process_ -  new process that is created by the parent process. The child 
 _spawn()_ - create new (child process) process from scratch
 _fork()_ - create child procees that is copy of parent
 _app.set_ - set configuration values `app.set('view engine', 'hbs')`
-_app.use_ - mount middle ware at applicatio level.
+_app.use_ - mount middle ware at applicatioN level.
 _app.all()_ used to specify middleware for all http methods in specified path
 _global object_ - object available in all module
 _stream_ - is used to handle large data, to read and write data in continous manner
