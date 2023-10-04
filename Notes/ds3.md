@@ -363,8 +363,6 @@ console.log("Contains 6:", bst.contains(6)); // Output: true
 bst.delete(6);
 console.log("Contains 6:", bst.contains(6)); // Output: false
 
-
-
 _______________________________________________________________________________________________________________
 
 

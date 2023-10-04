@@ -184,17 +184,17 @@ _________________
 
  lifecycle methods:
 
-componentDidMount(): 
-  Called after the component is rendered for the first time.
-  It's used for initialization tasks like fetching data or setting up event listeners.
+  componentDidMount(): 
+    Called after the component is rendered for the first time.
+    It's used for initialization tasks like fetching data or setting up event listeners.
 
-componentDidUpdate(prevProps, prevState): 
-  Called after the component is updated with new props or state.
-  It's used to handle actions based on the changes, like updating the UI or making additional requests.
-     
-                                                                                                                             componentWillUnmount():
-  Called right before the component is removed from the DOM.
-  It's used for cleanup tasks like removing event listeners or canceling timers.
+  componentDidUpdate(prevProps, prevState): 
+    Called after the component is updated with new props or state.
+    It's used to handle actions based on the changes, like updating the UI or making additional requests.                                                                                                          
+    
+  componentWillUnmount():
+    Called right before the component is removed from the DOM.
+    It's used for cleanup tasks like removing event listeners or canceling timers.
 
 
 ----------------------------------------------------------------------------------------------------------
@@ -214,7 +214,6 @@ _______
   Webpack is a tool used in web development to bundle and manage dependencies in JavaScript applications. 
   It takes your project files, processes them, and creates a single optimized file or multiple files
   for the browser to use.
-
 ----------------------------------------------------------------------------------------------------------
 
 Controlled Components: 
@@ -228,9 +227,7 @@ ________________________
 
   Form inputs where the value is managed by the DOM instead of the component's state. 
   Simpler to implement but provide less control and validation options.
-
 ----------------------------------------------------------------------------------------------------------
-
 
 PURE COMPONENT
 _______________
@@ -238,7 +235,6 @@ _______________
   A pure component in React is a component that automatically optimizes rendering by performing a 
   shallow comparison of props and state. 
   It skips re-rendering if the values are the same, improving performance.
-
 ----------------------------------------------------------------------------------------------------------
 
 FRAGMENTS
@@ -246,20 +242,32 @@ _________
 
   Fragments in React group multiple JSX elements without introducing an extra wrapper element in the DOM, 
   improving code readability and keeping the DOM structure clean.
+
+  fragment and a div : fragment does not render anything to the DOM, while a div does.
 ----------------------------------------------------------------------------------------------------------
 
 CSR (Client-Side Rendering): 
 ____________________________
 
+ The browser renders the web page using JavaScript.
+
  React renders components in the user's browser using JavaScript. 
  It provides a smooth user experience but slower initial load times.
 
+
 SSR (Server-Side Rendering): 
 ____________________________
+ The server renders the web page and sends the fully rendered HTML to the browser.
 
  React renders components on the server and sends fully rendered HTML to the user. 
  It offers faster initial load times but requires more server resources.
 
+
+` Feature	           `             `CSR	                   SSR`
+ Initial load time	 :              Slower	              Faster
+ SEO	               :              Good	                Excellent
+ Server load         :	            Lower	                Higher
+ Client-side interactivity:	        Better	              Worse
 ----------------------------------------------------------------------------------------------------------
 
 Stateless components: 
@@ -267,13 +275,11 @@ ____________________
 
   Functions that render UI based on props and don't manage internal state.
 
-
 Stateful components: 
 _____________________
 
   Classes that manage their own internal state using setState. 
   They handle complex state and user interactions.
-
 ----------------------------------------------------------------------------------------------------------
 
 REACT FIBER
@@ -282,8 +288,8 @@ ___________
   React Fiber is a rewritten reconciliation algorithm in React that improves performance, 
   responsiveness, and error handling. 
   It enables incremental rendering, time-slicing, concurrent updates, and better error boundaries.
-
 ----------------------------------------------------------------------------------------------------------
+
 JWT 
 ____
 
@@ -294,8 +300,8 @@ ____
   typically through credentials like usernames and passwords.
 
   Authorization determines what actions a user is allowed to perform based on their authenticated identity.
-
 ----------------------------------------------------------------------------------------------------------
+
  ACTION CREATOR
  _______________
 
@@ -307,8 +313,8 @@ ____
 
  An error boundary is a React component that catches JavaScript errors in its child components during 
  rendering and provides error fallback UI.
-
 ----------------------------------------------------------------------------------------------------------
+
  REDUX
  ______
 
@@ -316,7 +322,6 @@ ____
   It provides a predictable way to update and access state,
   making code easier to understand and maintain.
   Components can subscribe to the store to access and react to changes in the state.
-
 ----------------------------------------------------------------------------------------------------------
 
  USENAVIGATE
@@ -324,8 +329,8 @@ ____
 
  useNavigate is a hook that provides a function to navigate programmatically 
  to different routes within a React component.
-
 ----------------------------------------------------------------------------------------------------------
+
  ACTION
  ______
 
@@ -337,8 +342,8 @@ ____
 
  useLocation is a hook that returns the current location object,
  providing information about the current URL.
-
 ----------------------------------------------------------------------------------------------------------
+
  HOC stands for Higher-Order Component,
  _____________________________________
 
@@ -350,43 +355,41 @@ ____
 
   lazy loading is a feature that allows you to load components or routes dynamically only when they are needed,
   improving performance by reducing initial bundle size.
-
 ----------------------------------------------------------------------------------------------------------
+
  CODE SPLITTING 
  ______________
 
   Code splitting in React is a technique that allows you to split your application's code into smaller chunks, 
   loading them on-demand for improved performance.
-
 ----------------------------------------------------------------------------------------------------------
 
  PROP DRILLING
- ____________
+ _____________
 
   Prop drilling in React refers to the process of passing props through multiple intermediate components 
   to reach a deeply nested component.
-
 ----------------------------------------------------------------------------------------------------------
+
  PROFILER
  ________
 
   Profiler in React is a built-in tool used for measuring and optimizing 
   the performance of components and their rendering.
-
 ----------------------------------------------------------------------------------------------------------
+
  FRAFMENT AND DIV
  _________________
 
   Fragments and <div> in React are used to group multiple JSX elements together.
   Fragments allow grouping without introducing additional HTML elements like <div>.
-
 ----------------------------------------------------------------------------------------------------------
+
  SHALLOW RENDERING 
  _________________
 
   Shallow rendering in React is a testing technique that renders a component one level deep, 
   without rendering its child components, for isolated unit testing purposes.
-
 ----------------------------------------------------------------------------------------------------------
 
  INTERCEPTOR
@@ -394,15 +397,15 @@ ____
 
   interceptor is a mechanism that intercepts and handles requests or responses within the application's 
   HTTP client library, such as Axios or Fetch.
-
 ----------------------------------------------------------------------------------------------------------
+
  CUSTOM HOOK 
  ___________
 
  custom hook is a reusable function that encapsulates logic and state, 
  allowing it to be shared between multiple components.
-
 ----------------------------------------------------------------------------------------------------------
+
  REACT FIBER
  ____________
 
@@ -410,13 +413,14 @@ ____
   enabling efficient updates and improved performance.
 
 ----------------------------------------------------------------------------------------------------------
+
  GENERATOR FUCTION
  __________________
 
   generator function is a special type of function that can be paused and resumed, 
   allowing for asynchronous programming using the yield keyword.
-
 ----------------------------------------------------------------------------------------------------------
+
  REACT SAGA
  ___________
 
@@ -447,9 +451,16 @@ ____
   Axios interceptors are powerful mechanisms built into Axios for making changes to requests
   and responses in a non-intrusive way
 
-
   The axios cancel token API is based on the withdrawn cancelable promises proposal.    
   A CancellationToken enables cooperative cancellation between threads, thread pool work items, or Task objects
+
+  AXIOS AND FETCH
+  --------------- 
+
+  If you need a simple, built-in solution and prefer a lightweight approach, use fetch.
+
+  If you want a more feature-rich library with automatic error handling, 
+  interceptors, and support for older browsers,return json, go for Axios.
 ----------------------------------------------------------------------------------------------------------
 
  USE SELECTOR
@@ -590,7 +601,7 @@ encoded and digitally signed for verification.
 
 A JWT consists of three parts separated by dots:
 
-Header: Contains metadata about the token (like the type and the signing algorithm).
+Header:  Contains metadata about the token (like the type and the signing algorithm).
 Payload: Contains the claims (statements) about an entity (typically, the user) and additional data.
 Signature: Used to verify the authenticity of the token.
 
@@ -598,11 +609,7 @@ Eg:
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 ----------------------------------------------------------------------------------------------------------
 
- AXIOS AND FETCH 
 
-  If you need a simple, built-in solution and prefer a lightweight approach, use fetch.
-
-  If you want a more feature-rich library with automatic error handling, interceptors, and support for older browsers, go for Axios.
 ----------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------

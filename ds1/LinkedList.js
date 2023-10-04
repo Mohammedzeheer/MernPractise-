@@ -55,7 +55,6 @@ class linkedlist {
             newNode.next = currentNode
             this.head = newNode
             return
-
         }
         while (currentNode.next) {
             if (currentNode.next.value == value) {
@@ -82,7 +81,8 @@ class linkedlist {
                 newNode.next = currentNode.next
                 currentNode.next = newNode              
                 return
-            }            currentNode = currentNode.next
+            }            
+            currentNode = currentNode.next
         }
         console.log("not found")
     }
