@@ -483,14 +483,7 @@ ________________________________________________________________________________
   It's used to represent relationships and connections between entities. 
   Graphs can be directed or undirected and have various applications, 
   including social networks, maps,FACEBOOK and recommendation systems.
-
-
-    * Weighted graph is a type of graph where each edge or vertex has a numerical value called a "weight." 
-      These weights represent some measure, like distance or cost. Weighted graphs are used in various fields 
-      for tasks like finding shortest paths, optimizing flows, and more.
-
-
-      
+ 
     * Adjacency Matrix:
                      Uses a 2D array to represent edges.
                      Consumes more memory, especially for large and sparse graphs.
@@ -503,7 +496,35 @@ ________________________________________________________________________________
                     Efficient for finding neighbors.
                     Suitable for sparse graphs and dynamic graphs.
 
-   
+Undirected Graph:
+  An undirected graph is a collection of nodes (vertices) connected by edges. The edges have no direction, 
+  meaning they represent a bi-directional relationship between nodes.
+  `Nodes: A, B, C, D`
+  `Edges: (A, B), (B, C), (C, D), (D, A)`
+
+
+Directed Graph (Digraph):
+  A directed graph consists of nodes connected by directed edges. Each edge has a specific direction, 
+  indicating a one-way relationship between nodes. 
+  `Nodes: A, B, C, D`
+  `Directed Edges: (A -> B), (B -> C), (C -> D), (D -> A)` 
+
+
+Cyclic Graph:
+    A cyclic graph contains at least one cycle, which is a path that starts and ends at the same node, 
+    passing through one or more nodes in between.
+  `Nodes: A, B, C, D`
+  `Edges: (A, B), (B, C), (C, D), (D, A), (A, C)`
+
+
+Weighted graph:
+   Weighted graph is a type of graph where each edge or vertex has a numerical value called a "weight." 
+   These weights represent some measure, like distance or cost. Weighted graphs are used in various fields 
+   for tasks like finding shortest paths, optimizing flows, and more
+   `Nodes: A, B, C, D`
+   `Weighted Edges: (A, B, 5), (B, C, 3), (C, D, 7), (D, A, 2)`
+
+
 
 class Graph {
   constructor() {
@@ -586,11 +607,11 @@ class Graph {
     }
   }
 
-  //   print(){
-//     for(const [vertex,edge] of this.adjlist){
-//       console.log(vertex, '->', edge.join(', '));
-//     }
-//   }
+    print(){
+     for(const [vertex,edge] of this.adjlist){
+      console.log(vertex, '->', edge.join(', '));
+     }
+    }
   
 }
 

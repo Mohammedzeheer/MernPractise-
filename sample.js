@@ -49,7 +49,7 @@
 //         this.head = newnode;
 //         return
 //       }
-    
+
 //     while (curr.next) {
 //         if (value === curr.next.value) {
 //           newnode.next = curr.next;
@@ -59,23 +59,23 @@
 //         curr = curr.next;
 //       }
 //   }
-  
+
 
 //   deleteEnd() {
 //     if (!this.head) {
 //       return; // Empty list, nothing to delete
 //     }
-  
+
 //     if (!this.head.next) {
 //       this.head = null; // Only one node in the list, remove it
 //       return;
 //     }
-  
+
 //     let curr = this.head;
 //     while (curr.next.next) {
 //       curr = curr.next;
 //     }
-  
+
 //     curr.next = null; // Remove the last node
 //   }
 
@@ -83,11 +83,11 @@
 //     if (!this.head) {
 //       return; // Empty list, nothing to delete
 //     }
-  
+
 //     this.head = this.head.next; // Update head to the next node
 //   }
-  
-  
+
+
 // }
 
 
@@ -124,7 +124,7 @@
 // console.log(typeof(array));
 
 // let a =[3,5,6,1,21,6]
-  
+
 // for(let i=1;i<a.length;i++){
 //    let j= i-1
 //    let temp= a[i]
@@ -157,9 +157,19 @@
 //     clearInterval(ineterval);
 //     console.log('Interval cleared');
 //   };
-
 // })
 
+const array = [2, 3, 4, 5, 1, 9]
 
- 
+for (let i = 0; i < array.length - 1; i = i + 2) {
+    for (let j = 0; j < array[i]; j++) {
+        console.log(array[i + 1])
+    }
+    for (let j = 0; j < array[i + 1]; j++) {
+        console.log(array[i])
+    }
+}
+
+
+
 

@@ -540,9 +540,15 @@ RENDER PROPS
 _____________
   render prop refers to a technique for sharing code between React components using a prop whose value is a function
 ----------------------------------------------------------------------------------------------------------
+
 BATCHING
 ________
-  React uses batching to group state updates within event handlers and inbuilt hooks.
+
+   Batching in React is a technique that groups multiple state updates into a single re-render. 
+   This can improve performance by reducing the number of times the DOM needs to be updated.
+
+   React uses batching to group state updates within event handlers and inbuilt hooks.
+
 
 ----------------------------------------------------------------------------------------------------------
 

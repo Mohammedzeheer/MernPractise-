@@ -113,6 +113,16 @@ class bst {
     }
     console.log(`minimum value`,root.value);
    }
+
+   secondLargest(){
+    let root=this.root
+    let sl=null
+    while(root.right){
+      sl=root.value
+     root=root.right
+    }
+    console.log(`second largest`,sl)
+   }
    
 }
 
@@ -124,5 +134,7 @@ b.add(21)
 b.preTraversel()
 b.inorderTraversal()
 b.minimumValue()
+b.secondLargest()
 console.log(`Contains 68 : `, b.constains(68))
 console.log(b)
+

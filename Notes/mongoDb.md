@@ -180,10 +180,8 @@ __________________
 
 - It is used for represent datas stored in BSON format in Readable format.
 
-
 5.2 Most common BSON types and Representation in extended JSON
 ________________________________________________________________
-
 
 > String           " Hellow world " 
 
@@ -362,7 +360,7 @@ skip()
 
 - if we give skip the method return after skipping a perticular documents.
 
-   db.Brototype.find().skip(2)
+  ` db.Brototype.find().skip(2)`
 
 
                                       Update
@@ -409,10 +407,10 @@ $rename        db.Brototype.update( { Name: "sahad" }, { $rename: { Name: "name"
 $currentDate   sets the value of a field to the current date
 
 $inc           db.Brototype.updateOne( {name:"zeheer"},{$inc:{Batch:57}})
+               db.Brototype.updateOne({age: { $gt: 25 }},{ $inc: { salary: 1000 }})
+
 
                db.Brototype.updateOne( {name:"zeheer"},{$inc:{"arrayname.item":12}})  (in the case of array)
-
-
 
 
 
@@ -444,7 +442,6 @@ ________________________
 - if we pass our collection to each stage it will itrate data.
 
 
-
 aggregation stage or aggregation opartors
 ------------------------------------------
 
@@ -471,14 +468,12 @@ $last
 $unwind
 
 
-
 8.1 Aggregation pipeline
 __________________________
 
 - specific flow of oprations like (match, group..etc) and return result are called AGGREGATION PIPLINE.
 
 --------------------------------------------------------------------------------------------------
-
 
 
 9 indexes or indexing
@@ -619,6 +614,7 @@ ____________________
     normalization is a technique used in database design to organize data efficiently, reduce redundancy, 
     and enhance data integrity and consistency.
 -------------------------------------------------------------------------------------------------------
+
 19  elemMATCH
   $elemMatch 
   is a projection operator in MongoDB used to filter the elements of an array based on specific criteria. 
@@ -713,6 +709,41 @@ db.adminCommand({setParameter: 1, journalCommitInterval: 100});
 // Adding a document to a collection
 db.myCollection.insertOne({name: "John Doe", age: 30});
 
+-------------------------------------------------------------------------------------------------------
+  DATE VS TIMESTAMP 
+
+  Both data types used to store date and time information
+
+  DATE : stores the year, month, and day  , Does not store time zone information
+
+  TIME STAMPS : stores the year, month, day, hour, minute, second, and fractional seconds 
+                also store the time zone information
+
+-------------------------------------------------------------------------------------------------------
+
+   REMOVE VS UNSET 
+  
+   Both used to remove data from a document.
+
+   REMOVE : removes the entire document from the collection.   db.users.remove({name: "John Doe"})
+   
+   UNSET  : removes a specific field from a document.   db.users.update({name: "John Doe"}, {$unset: {age: 1}})
+
+-------------------------------------------------------------------------------------------------------
+
+$pop and $pull 
+
+ both update operators in MongoDB, but they serve different purposes:
+
+   $pop is used to remove the first or last element of an array.
+  `db.collection.updateOne({ _id: ObjectId("document_id") },{ $pop: { myArray: 1 } })`
+
+   $pull is used to remove all instances of a value or values that match a specified condition from an array.
+   `db.collection.updateOne({ _id: ObjectId("document_id") },{ $pull: { myArray: { $gte: 30 } } })`
+
+
+
+
 ____________________________________  NOTES _____________________________________________________________
 
 
@@ -722,9 +753,11 @@ _Documents_ - data sturcture composed of key value pairs similar to sturcture of
 _Lookup_ - it is aggregation operator which is used to join document from one collection to document of 
 another collection.
 _Unwind_ - used to deconstrut array field into multiple documents
+
 _In vs all_ 
 In - return all document which match any of value provided.
 all -  return document which matches all the vlaues  provided, equivalent  to $and
+
 _$not_ - return docmunet that does not match the operation.
 _$expr_  - operator is used within the aggregation framework to perform advanced and complex query operations. 
 ```

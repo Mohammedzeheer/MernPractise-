@@ -399,13 +399,14 @@ class stack {
 
 
   _Bubble Sort_ - repeatedly compare adjecent elements and swap them if they are in wrong order until they are completely sorted. - O(n^2)T, O(1)S
-- _Adv_ - Easy to understand and impelement
+- _Adv_ 
+  - Easy to understand and impelement
 	- it does not require additional space
 	- it is stable
-- _Dis_ - quadratic time complexity
-	- inefficient for large data set
-
-
+- _Dis_ 
+  - quadratic time complexity
+  - inefficient for large data set
+--------------------------------------------------------------------------------------------------
 
 _Insertion Sort_ - it work by dividing the input into sorted and unsorted portion, 
 initially sort position only consist of first element rest of array is considered unsorted, the algorithm iterate through unsorted portion, take element from unsorted portion and place it in correct positon in sorted part. - O(n^2)T, O(1)S
@@ -415,16 +416,18 @@ initially sort position only consist of first element rest of array is considere
 	- not suitable for large data set
 	- not stable
 - _Appl_ - used in JS Sort()
-
+--------------------------------------------------------------------------------------------------
 
 - _Selection Sort_ - Repeatedly select smallest element from unsorted part and swap it with element in current positon. - O(n^2)T, O(1)S
-- _Adv_ - Easy to understand and impelement
+- _Adv_ 
+  - Easy to understand and impelement
 	- it does not require additional space
 	- Perform well on small data set
-- _Dis_ - Quadratic time complexity
+- _Dis_ 
+  - Quadratic time complexity
 	- not suitable for large data set
 	- not stable
-
+--------------------------------------------------------------------------------------------------
 
 _Quick Sort_ - find pivot element, partion array into subarray around pivot and recursivley sort sub array 
 - _Adv_ - complexity O(n logn)
@@ -432,11 +435,13 @@ _Quick Sort_ - find pivot element, partion array into subarray around pivot and 
 	- it can take advantage of multiple cores
 - _Dis_ - not stable
 	-  worst case complexity quadratic(pivot is either large or smallest element of array)
-	- perfomance depand on choice of pivot
-
+	-  perfomance depand on choice of pivot
+--------------------------------------------------------------------------------------------------
 
 
 _Merge Sort_ - repeatedly divide array into single elements and merge them in sorted order
+               divide and conqure method 
+
 - _Adv_ - it is stable
 	- worst case complexity is O(n log n)
 	- prallizable
@@ -444,7 +449,7 @@ _Merge Sort_ - repeatedly divide array into single elements and merge them in so
 	- recusive fuction call need stack usage
 	- not suitable for small data set
 
-
+--------------------------------------------------------------------------------------------------
 
 _Stack_ - 
 - _Adv_ - Efficient insertion and deletion
@@ -452,7 +457,7 @@ _Stack_ -
 	- Stack has fixed size which lead to overflow and underflow
 - _Appl_ - Fuction call mangement
 	- DFS
-
+--------------------------------------------------------------------------------------------------
 
     
 _Queue_
@@ -463,14 +468,18 @@ _Queue_
 	- manage print jobs in printer
 	- BFS
 
-
+--------------------------------------------------------------------------------------------------
 
 _Hash table_ - in hashtable data stored as key value pairs in array. hashing function is used to find index to insert data.
+
+The time complexity of search and insert operations in a hash table is O(1) on average, and O(n) in the worst case.
+
 _Rehashing_ - increasing size of hashmap and redsistributing elements based on new hash value.
 _Hashing methods_
 - Division method - Simple, key divided by size of hash table
 - mid square method - sqaure the key and take middle digit as hash value
 - folding method - break key into pices and combine to get hash value
+
 - multiplication method - multiply key with constant and take remainder as hash value.
 _collision_ - If multiple pairs map to the same index (known as a collision),
 To avoid collision - _Seperate Chaining_ (linked list) and _open addressing_
@@ -490,3 +499,4 @@ _Open addressing_ - find next free space in case of collision, it can be done in
 	- cryptographic algorithm
 - _Load Factor_ - load factor is used to measure the fullness of  hash table
 `Load Factor = (Number of Stored Elements) / (Total Number of Buckets or Slots)`
+--------------------------------------------------------------------------------------------------

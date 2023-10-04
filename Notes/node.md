@@ -580,7 +580,7 @@ _____________
   > It is used to update existing data 
   > It is only Modify which you want to update 
   > It wont change other data
-  > If we send same data two more times  to change as request , it'll modify every request 
+  > If we send same data two more times to change as request , it'll modify every request 
     it take more time
 
  PUT
@@ -588,8 +588,7 @@ _____________
   > It is used to update existing data
   > It is modify which data you want to change and other data will also modify 
   > Difference is If we send same data two more times to change as request , it'll recongnize and modify 
-   
-  only one request and so we can consume time
+    only one request and so we can consume time
 
 
  GET Vs POST 
@@ -734,7 +733,7 @@ ______________________
 
  when what happen........ the process given below in step by step.
 
-  1) client send  a request into server witout anything  then server will respond Please Login!
+  1) client send  a request into server witout anything then server will respond Please Login!
   2) client will login with Username and Password
   3) Then if server get username and password , it'll create a SESSION using password and username in serverside
   4) Server store any information about client it maybe username or password or something.. !
@@ -753,15 +752,10 @@ ______________________
 
   1) First browser check is there any COOKIE ?
    So now we have cookie because user logged before
-
   2) Client give request with COOKIE to server 
-
   3) Server will search inside the cookie and find session ID 
-
   4) Server check inside the session  is there anyone existing with this ID ?
-
   5) if the same ID came from cookie is existing inside the session , server will respond "Yes session exist"
-
   6) So the server give Home page to the Client .
 
 
@@ -891,7 +885,7 @@ ______________________
  ______________________________________
 
   CORS is a security mechanism implemented in web browsers that allows web applications 
-  running in one domain to request resources from another domain in a controlled manner.
+  running in one domain to request resources from anoth er domain in a controlled manner.
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -1164,7 +1158,9 @@ ____________
 ------------------------------------------------------------------------------------------------------------
 
 WEB HOOK 
-A webhook is a type of API endpoint that allows two applications to communicate with each other asynchronously. When an event occurs in one application, it can trigger a webhook to be sent to the other application. The receiving application can then take some action based on the event data.
+ A webhook is a type of API endpoint that allows two applications to communicate with each other asynchronously.
+ When an event occurs in one application, it can trigger a webhook to be sent to the other application. 
+ The receiving application can then take some action based on the event data.
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -1189,7 +1185,9 @@ GraphQL:
 
 CLUSTER WORKER 
 
-Cluster workers are child processes that are spawned by the Node.js cluster module. They run simultaneously and share the same server port. Each worker has its own event loop, memory, and V8 instance. Workers communicate with each other and with the parent process using IPC (Inter-process communication).
+Cluster workers are child processes that are spawned by the Node.js cluster module. 
+They run simultaneously and share the same server port. Each worker has its own event loop, 
+memory, and V8 instance. Workers communicate with each other and with the parent process using IPC (Inter-process communication).
 
 
 
@@ -1203,20 +1201,21 @@ _runtime environment_ It provide all functionality for program to run.
 _control flow_ - order of code is being executed
 _modules_ - encapsulated code which perform specific functiionality, which can be imported
 _lodash_ is js library provide utility function for doing common programming task, like manipulating array object and string
-_Types of modules_ - Core Modules.
+_Types of modules_ 
+    - Core Modules.
 		- Local Modules.
 		- Third Party Modules.
 _HTTP_ - used to transfer data between server and client
 _HTTP methods_
-- Get - to request data from server
-- Post - send data to server often result in creation of resource.
-- Put - used to update existing data.
-- Patch - partialy update existing resource
-- Option - show available methods
-- Delete -delet resource
-- Connect- establish connection
+            - Get - to request data from server
+            - Post - send data to server often result in creation of resource.
+            - Put - used to update existing data.
+            - Patch - partialy update existing resource
+            - Option - show available methods
+            - Delete -delet resource
+            - Connect- establish connection
 - Trace - used for debugging, it return exact request
-_Middlewares_ - middlewaare fuctions that reccive request and execute between request and response
+_Middlewares_ - middlewaare fuctions that receive request and execute between request and response
 _application level middleware_ - is applied to entire application it can be added using `app.use()`
 _rotuter level middleware_ - is applied to specifinc route. `route.use()`
 _error handling middleware_ - used to handle error, it is added at end and add using `app.use()`
@@ -1339,6 +1338,7 @@ _REPL_ - Read evaluate print loop, allow us to interact with node from command l
 _Clustering_ - in Node.js is a technique that allows you to take full advantage of multi-core processors by creating multiple Node.js processes, often referred to as "worker processes.
 
 _Node Concurency_ - it enable node js to handle large number of I/O operations simultaneously, without blocking the execution thread.
+
 _Event Loop_ - Here is an example of how the event loop works:
 A user makes a request to a Node.js server.
 The event loop receives the request and adds it to the event queue.
