@@ -5,22 +5,22 @@ ___________
   Space Complexity : O(1)
 
 
-function bubbleSort(arry){
-    for(let i=0;i<arry.length;i++){
-        for(let j=0;j<arry.length-1-i;j++){
-            if(arry[j]>arry[j+1]){
-                let temp=arry[j]
-                arry[j]=arry[j+1]
-                arry[j+1]=temp
+function bubbleSort(array){
+    for(let i=0;i<array.length;i++){
+        for(let j=0;j<array.length-1-i;j++){
+            if(array[j]>array[j+1]){
+                let temp=array[j]
+                array[j]=array[j+1]
+                array[j+1]=temp
             }
         }    
     }
-    return arry
+    return array
 }
 const array=[2,5,1,7,2,8]
 console.log(bubbleSort(array))
 
-
+______________________________________________________________________________________________
 
 
 insertion sort 
@@ -30,7 +30,7 @@ Time Complexity : O(n²) in worst case & O(n) in Best case
 Space Complexity : O(1)
 
 let a = [4, 7, 3, 1, 9, 5, 6]
-function insertionsort() {
+function insertionsort(a) {
     for (i = 1; i < a.length; i++) {
         temp = a[i]
         j = i - 1
@@ -43,8 +43,10 @@ function insertionsort() {
     return a
 }
 
-let result=insertionsort()
+let result=insertionsort(a)
 console.log(result)
+
+______________________________________________________________________________________________
 
 
 selection sort 
@@ -73,7 +75,7 @@ let i;
 
  console.log(selectionSort());
 
-
+______________________________________________________________________________________________
 
 quickSort
 _________
@@ -106,7 +108,7 @@ const arr=[789,4,6,-1,-3]
 const sorted=quickSort(arr)
 console.log(sorted)
 
-
+______________________________________________________________________________________________
 
 MERGESORT
 _________
@@ -317,7 +319,7 @@ stackl.push(10);
 stackl.push(20);
 stackl.push(30);
 stackl.display();
-//   console.log(stackl.peek());  // Output: 30
+// console.log(stackl.peek());  // Output: 30
 
 console.log(stackl.pop());
 stackl.display();   // Output: 30
@@ -394,6 +396,68 @@ class stack {
 
 
 
+----------------------------- QUEUE -------------------------------------------------------
+
+class Node {
+    constructor(data) {
+      this.data = data;
+      this.next = null;
+    }
+  }
+  
+  class Queue {
+    constructor() {
+      this.front = null;
+      this.rear = null;
+    }
+  
+    isEmpty() {
+      return this.front === null;
+    }
+  
+    enqueue(data) {
+      const newNode = new Node(data);
+      if (this.isEmpty()) {
+        this.front = newNode;
+        this.rear = newNode;
+      } else {
+        this.rear.next = newNode;
+        this.rear = newNode;
+      }
+    }
+  
+    dequeue() {
+      if (this.isEmpty()) {
+        return null;
+      }
+  
+      const removedNode = this.front;
+      this.front = this.front.next;
+  
+      if (this.front === null) {
+        this.rear = null;
+      }
+  
+      return removedNode.data;
+    }
+  }
+  
+
+  const myQueue = new Queue();
+  
+  myQueue.enqueue(10);
+  myQueue.enqueue(20);
+  myQueue.enqueue(30);
+  
+  console.log(myQueue.dequeue()); // Output: 10
+  console.log(myQueue.dequeue()); // Output: 20
+  
+  console.log(myQueue.isEmpty()); // Output: false
+  
+  console.log(myQueue.dequeue()); // Output: 30
+  console.log(myQueue.isEmpty()); // Output: true
+  console.log(myQueue.dequeue()); // Output: null
+  
 
   __________________________________ Notes ____________________________________________________
 
@@ -403,9 +467,9 @@ class stack {
   - Easy to understand and impelement
 	- it does not require additional space
 	- it is stable
-- _Dis_ 
+- _Di 
   - quadratic time complexity
-  - inefficient for large data set
+  - inefficient for large data sets_
 --------------------------------------------------------------------------------------------------
 
 _Insertion Sort_ - it work by dividing the input into sorted and unsorted portion, 

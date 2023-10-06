@@ -489,6 +489,14 @@ _______________________
 
 - Types of index. 
 
+  _Single field indexing_ - use for quick to index single field
+_compund indexing_ - improve perfomance of queries that involve multiple field
+_multikey indexing_ - these are used for efficient indexing of array fields
+_geospatial indexing_ - these used for indexing of location based data
+_Text indexing_ - this index support searching for string content in document
+_Hashed indexing_ - 
+_TTL indexing_ - These index automaticaly remove document from collection after certain amount of time.
+
 --------------------------------------------------------------------------------------------------
 
 

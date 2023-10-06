@@ -45,6 +45,10 @@ Space complexity :
 __________________
 Measure of the amount of memory required by an algorithm to solve a problem.
 
+Asymptotic notation 
+___________________
+is a mathematical notation to describe the growth rate of an algorithm's time or space complexity.
+
 
  Big O notation :
 ___________________
@@ -81,74 +85,6 @@ function fact(num){
 }
 
 
-different types of data structures:
-___________________________________
-
-Arrays
-Linked Lists
-Stacks
-Queues
-Trees
-Graphs
-Hash Tables
-Heaps
-Sets
-
-
-
- Array :
-_________
- An array is an ordered collection of elements with a fixed size, 
-accessed by index, and of the same data type.
-
-Array disadvantages:
-
-Fixed size
-Inefficient insertion and deletion
-Contiguous memory requirement
-Limited flexibility
-Inefficient search (for unsorted arrays)
-Inefficient sorting
-Difficulty in inserting or deleting elements
-Lack of dynamic resizing
-Lack of heterogeneous elements.
-Memory Wastage
-Overflow and Underflow
-
-Array Advantages:-
-
-Random Access
-Cache Locality
-Efficiency in Traversal
-Efficient for Fixed Size
-
-
-
-LINKED LIST 
-____________
-
-Advantages of Linked Lists:
-
-  Dynamic Size
-  Efficient Insertion and Deletion
-  Memory Efficiency
-  Flexibility in Implementation
-
-Disadvantages of Linked Lists:
-
-  Lack of Random Access
-  Extra Memory Overhead
-  Inefficient Memory Cache Usage
-  Inefficient for Reversal or Backward Traversal
-  Required Memory Allocation
-
-
-
-Asymptotic notation 
-___________________
-is a mathematical notation to describe the growth rate of an algorithm's time or space complexity.
-
-
 BINARY SEARCH
 _____________
 
@@ -181,6 +117,71 @@ function linearSearch(array){
     }
   }
 }
+
+
+
+different types of data structures:
+___________________________________
+
+Arrays
+Linked Lists
+Stacks
+Queues
+Trees
+Graphs
+Hash Tables
+Heaps
+Sets
+
+
+ Array :
+_________
+ An array is an ordered collection of elements with a fixed size, 
+ accessed by index, and of the same data type.
+
+ Array Advantages:-
+
+    Random Access
+    Cache Locality
+    Efficiency in Traversal
+    Efficient for Fixed Size
+
+ Array disadvantages:
+
+    Fixed size
+    Inefficient insertion and deletion
+    Contiguous memory requirement
+    Limited flexibility
+    Inefficient search (for unsorted arrays)
+    Inefficient sorting
+    Difficulty in inserting or deleting elements
+    Lack of dynamic resizing
+    Lack of heterogeneous elements.
+    Memory Wastage
+    Overflow and Underflow
+
+
+__________________________________________________________________________________________________________
+
+
+LINKED LIST 
+____________
+
+Advantages of Linked Lists:
+
+  Dynamic Size
+  Efficient Insertion and Deletion
+  Memory Efficiency
+  Flexibility in Implementation
+
+Disadvantages of Linked Lists:
+
+  Lack of Random Access
+  Extra Memory Overhead
+  Inefficient Memory Cache Usage
+  Inefficient for Reversal or Backward Traversal
+  Required Memory Allocation
+
 
 
 LINKED LIST 
@@ -234,8 +235,7 @@ class linkedlist{
             
         }
     }
-
-      
+  
       
       insertafter(value,newvalue){
         const newnode=new node(newvalue)
@@ -383,7 +383,8 @@ _Circular linked list_
 _Multi linked list_ - node has multiple pointer to other nodes
 		
 _Stack_ - Linear data structure, in which operations are performed in LIFO order
- - _Advantages_ - Easy to implement
+ - _Advantages_ 
+        - Easy to implement
  		- Efficient memmory utlisation
  		- Fast acces and removal
 - _Disadvantages_ - Random acces not possible

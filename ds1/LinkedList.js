@@ -183,7 +183,20 @@ class linkedlist {
         node.next = null;
       }
     
-     
+
+     //find last with recursion 
+    findEnd(){
+        this.findLast(this.head)
+    }
+    findLast(curr){
+        if(curr.next==null){
+          console.log(curr)
+          return
+        }
+        this.findLast(curr.next)
+    }
+
+
     
     // PRINT LINKED LIST ------------------
     print(){

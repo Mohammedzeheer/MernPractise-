@@ -306,35 +306,18 @@ class BinarySearchTree {
     return curr.value
   }
 
-
-    findSecondLargest() {
-        let largest = -Infinity;
-        let secondLargest = -Infinity;
-
-        let current = this.root;
-
-        while (current) {
-            if (current.value > largest) {
-                secondLargest = largest;
-                largest = current.value;
-            } else if (current.value < largest && current.value > secondLargest) {
-                secondLargest = current.value;
-            }
-
-            if (current.right) {
-                current = current.right;
-            } else {
-                break;
-            }
-        }
-        return secondLargest;
-    }
+     seconlargest(){
+        let curr= this.root
+         let st
+         while(curr.right){
+             st=curr
+             curr=curr.right
+         }
+         console.log(`second Largest : `, st.value)
+     }
   }
-
-
 }
 
-// Workout 1 - Create a Binary Search Tree
 const bst = new BinarySearchTree();
 bst.insert(8);
 bst.insert(3);
@@ -368,7 +351,6 @@ ________________________________________________________________________________
 
 MIN HEAP 
 ________
-
 
 
 class minheap{
@@ -523,7 +505,6 @@ Weighted graph:
    for tasks like finding shortest paths, optimizing flows, and more
    `Nodes: A, B, C, D`
    `Weighted Edges: (A, B, 5), (B, C, 3), (C, D, 7), (D, A, 2)`
-
 
 
 class Graph {

@@ -159,17 +159,299 @@
 //   };
 // })
 
-const array = [2, 3, 4, 5, 1, 9]
+// const array = [2, 3, 4, 5, 1, 9]
 
-for (let i = 0; i < array.length - 1; i = i + 2) {
-    for (let j = 0; j < array[i]; j++) {
-        console.log(array[i + 1])
+// for (let i = 0; i < array.length - 1; i = i + 2) {
+//     for (let j = 0; j < array[i]; j++) {
+//         console.log(array[i + 1])
+//     }
+//     for (let j = 0; j < array[i + 1]; j++) {
+//         console.log(array[i])
+//     }
+// }
+
+
+// class node{
+//     constructor(value){
+//         this.value=value
+//         this.left=null
+//         this.right=null
+//     }
+// }
+
+// class bst{
+//     constructor(){
+//         this.root=null
+//     }
+
+//     add(value){
+//          let newnode=new node(value)
+//         if(!this.root){
+//             this.root=newnode 
+//         }else{
+//             this.addnode(this.root,newnode)
+//         }
+//     }
+
+//     addnode(root,newnode){
+//         if(newnode.value<root.value){
+//             if(root.left==null){
+//                 root.left=newnode
+//             }else{
+//                 this.addnode(root.left,newnode)
+//             }
+//         }else{
+//             if(root.right==null){
+//                 root.right=newnode
+//             }else{
+//             this.addnode(root.right,newnode)
+//             }
+//         }
+//     }
+
+//     pretraversal(){
+//         this.pretraversalnode(this.root)
+//     }
+
+//     pretraversalnode(root){
+//         if(!root){
+//             return 
+//         }
+//         console.log(root.value);
+//        this.pretraversalnode(root.left)
+//        this.pretraversalnode(root.right)
+//     }
+
+//     seconlargest(){
+//         let curr= this.root
+//         let st
+//         while(curr.right){
+//             st=curr
+//             curr=curr.right
+//         }
+//         console.log(`second Largest : `, st.value)
+//     }
+
+//     secondSmallest(){
+//         let curr=this.root
+//         let sm
+//         while(curr.left){
+//             sm=curr
+//             curr=curr.left
+//         }
+//         console.log(`second Smallest: `, sm.value)
+//     }
+   
+// }
+
+// let bs=new bst()
+// bs.add(23)
+// bs.add(56)
+// bs.add(12)
+// bs.add(61)
+// bs.add(9)
+// bs.pretraversal()
+// bs.seconlargest()
+// bs.secondSmallest()
+
+// class graph{
+//     constructor(){
+//     this.adjlist=new Map()
+//     }
+
+//     addVertext(value){
+//     this.adjlist.set(value,new Set())
+//     }
+
+//     addEdges(vertex1,vertex2){
+//         this.adjlist.get(vertex1).add(vertex2)
+//         this.adjlist.get(vertex2).add(vertex1)
+//     }
+
+//     bfs(value){
+//         let queue = []
+//         let visted = new Set()
+
+//         visted.add(value)
+//         queue.push(value)
+
+//         while(queue>0){
+//             let currentvertex=queue.shift()
+//             console.log(currentvertex) 
+       
+//          const adjsvertex= this.adjlist.get(currentvertex)
+//           for(let neigbor of adjsvertex){
+//              if(!visted.has(neigbor)){
+//                 visted.add(neigbor)
+//                 queue.push(neigbor)
+//              }
+
+//           }  
+//         }
+//     }
+// }
+
+
+// class node {
+//     constructor(value){
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
+
+// class linkedList {
+//     constructor(){
+//         this.head = null;
+//         this.tail = null;
+//     }
+
+//     add(value){
+//         let newnode = new node(value);
+//         if(!this.head){
+//             this.head = newnode;
+//             this.tail = newnode;
+//             return;
+//         }
+//         this.tail.next = newnode;
+//         this.tail = newnode;
+//     }
+
+//     reverse(){
+//         let prev = null;
+//         let current = this.head;
+//         let next = null;
+
+//         while (current != null) {
+//             next = current.next;
+//             current.next = prev;
+//             prev = current;
+//             current = next;
+//         }
+
+//         this.head = prev;
+//     }
+
+//     getTail(){
+//         return this.tail;
+//     }
+  
+//     findEnd(){
+//         this.findLast(this.head)
+//      }
+//     findLast(curr){
+//         if(curr.next==null){
+//           console.log(curr)
+//           return
+//         }
+//         this.findLast(curr.next)
+//     }
+
+//      size(){
+//         let curr=this.head
+//         let size=1
+//         while(curr.next){
+//             size++
+//           curr=curr.next
+//         }
+//         console.log(`size: ${size}`) 
+//      }
+
+// }
+
+// let l1 = new linkedList();
+// let l2 = new linkedList();
+
+// l1.add(34);
+// l1.add(35);
+// l1.add(38);
+// l1.add(54);
+// l1.add(84);
+
+// l2.add(74);
+// l2.add(38);
+// l2.add(54);
+// l2.add(84);
+
+// let lastNodeL1 = l1.getTail();
+// let lastNodeL2 = l2.getTail();
+
+// let sum = lastNodeL1.value + lastNodeL2.value;
+
+// // let reve= sum.toString()
+// // let reversed=reve.split('').reverse().join('')
+// // console.log(`reversed: ${reversed}`)
+
+// // Convert the sum to a linked list
+// let sumList = new linkedList();
+// while (sum > 0) {
+//     sumList.add(sum % 10);
+//     sum = Math.floor(sum / 10);
+// }
+
+// // Reverse the sumList to get the correct order
+// sumList.reverse();
+
+// console.log('Reversed Sum Linked List:');
+// console.log(sumList);
+
+// l1.findEnd()
+// l1.size()
+
+// let str= ['apple', 'orange']
+
+// function reverseString(str) {
+//     let reversed = "";
+//     for (let i = str.length - 1; i >= 0; i--) {
+//       reversed += str[i];
+//     }
+//     return reversed;
+//   }
+  
+
+//   console.log(reverseString(str));
+
+//   let reversedStr = str.map(reverseString);
+  
+//   console.log(reversedStr);
+  
+// let str = ['apple', 'orange'];
+
+// function reverseString(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         let reversed = '';
+//         for (let j = arr[i].length - 1; j >= 0; j--) {
+//             reversed += arr[i][j];
+//         }
+//         arr[i] = reversed;
+//     }
+//     return arr; 
+// }
+
+// console.log(reverseString(str));
+
+// const a=12345
+
+// function findSum(a){
+
+//     if(a<6){
+//         return a
+//     }
+//     return (a%10) + findSum(Math.floor(a/10))
+// }
+
+// console.log(findSum(a));
+
+const arr= [1,3,5]
+var canMakeArithmeticProgression = function(arr) {
+    arr.sort((a,b) => a-b)
+    let diff = Math.abs(arr[0] - arr[1])
+    for (let i = 0; i < arr.length - 1;i ++) {
+        if (diff !== Math.abs(arr[i] - arr[i+1])) {
+            return false
+        }
     }
-    for (let j = 0; j < array[i + 1]; j++) {
-        console.log(array[i])
-    }
-}
+    return true
+     
+};
 
-
-
-
+console.log(canMakeArithmeticProgression(arr))

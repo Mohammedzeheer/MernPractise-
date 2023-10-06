@@ -1190,6 +1190,27 @@ They run simultaneously and share the same server port. Each worker has its own 
 memory, and V8 instance. Workers communicate with each other and with the parent process using IPC (Inter-process communication).
 
 
+------------------------------------------------------------------------------------------------------------
+
+LOCAL STORAGE AND SESSION STORAGE
+
+Local storage:
+      Data stored in local storage persists even after the browser is closed and reopened.
+      Local storage has a larger storage capacity than session storage.
+      Local storage is shared across all tabs and windows of the same browser.
+
+ Local storage is useful for storing data that needs to be persisted across browser sessions, 
+ such as user preferences, login credentials, and offline data.
+
+Session storage:
+      Data stored in session storage is cleared when the browser is closed or when the user navigates to a different website.
+      Session storage has a smaller storage capacity than local storage.
+      Session storage is isolated to the current tab or window.
+      When to use local storage
+
+When to use session storage
+Session storage is useful for storing data that is only needed for the current browser session,
+such as shopping cart items and temporary data.
 
 
 
