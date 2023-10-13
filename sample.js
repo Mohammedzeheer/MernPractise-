@@ -509,13 +509,40 @@ const { json } = require("stream/consumers")
 // console.log(b)
 
 
-const promise1 = new Promise(resolve => setTimeout(() => resolve('Promise 1 resolved'), 2000));
-const promise2 = new Promise((resolve, reject) => setTimeout(() => reject('Promise 2 rejected'), 1000));
+// const promise1 = new Promise(resolve => setTimeout(() => resolve('Promise 1 resolved'), 2000));
+// const promise2 = new Promise((resolve, reject) => setTimeout(() => reject('Promise 2 rejected'), 1000));
 
-Promise.all([promise1, promise2])
-  .then(result => {
-      console.log('Result:', result); // Output: Result: Promise 2 rejected
-  })
-  .catch(error => {
-      console.error('Error:', error); // Output: Error: Promise 2 rejected
-  });
+// Promise.all([promise1, promise2])
+//   .then(result => {
+//       console.log('Result:', result); // Output: Result: Promise 2 rejected
+//   })
+//   .catch(error => {
+//       console.error('Error:', error); // Output: Error: Promise 2 rejected
+//   });
+
+// const a=[2,3,5,6,7,8]
+
+
+// function binarySearch(a,t,s,e){
+// let mid=Math.floor((s+e)/2)
+//  if(t==a[mid]){
+//     return mid
+//  }if(t<a[mid]){
+//     return binarySearch(a,t,s,mid-1)
+//  }else{
+//     return binarySearch(a,t,mid+1,e)
+//  }
+// }
+
+// let result= binarySearch(a,5,0,a.length-1)
+// console.log(result);
+
+// class node{
+//    constructor(value){
+//      this.value=value
+//      this.left=null
+//      this.right=null
+//    }
+// }
+
+

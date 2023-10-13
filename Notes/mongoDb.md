@@ -591,7 +591,6 @@ ____________________
      Consistency (C) : All nodes see the same data at the same time.
      Availability (A): The system always responds to requests.
      Partition tolerance (P): The system keeps working even if some nodes can't talk to each other.
-
 -------------------------------------------------------------------------------------------------------
 
 16  AGGREGATION
@@ -601,9 +600,9 @@ ____________________
 
     Aggregation Pipeline :
             is a framework for performing step-by-step data processing operations on a collection. 
-            It uses stages with operators to manipulate and transform documents.
-
+            It uses stages with operators to manipulate and transform documents
 -------------------------------------------------------------------------------------------------------
+
 17 SHARDING
    
     sharding is a critical feature that allows you to horizontally partition your data across multiple servers. 
@@ -651,23 +650,23 @@ ____________________
   ];
 
   productsCollection.bulkWrite(bulkOps, (err, result) => {
-  
-
 -------------------------------------------------------------------------------------------------------
+
 21 BATCH SIZE 
    
    Batch sizing in MongoDB is about how many documents you process or retrieve at once.
    It's like how many items you handle in a single batch. This helps balance speed and memory usage. 
    Adjusting batch size can make operations more efficient.
 -------------------------------------------------------------------------------------------------------
+
 22 TTL
 
    "Time To Live." It automatically deletes documents from a collection after a set time.
    This is done using a TTL index on a field with expiration times.
 
    Eg:  db.myCollection.createIndex( { "expireAt": 1 }, { expireAfterSeconds: 0 } )
-
 -------------------------------------------------------------------------------------------------------
+
 23  CURSOR 
  
    A cursor in MongoDB is like a pointer to the results of a query. It helps you retrieve and process 
@@ -678,8 +677,8 @@ ____________________
    cursor.forEach(doc => {
       console.log(doc);
    });
-
 -------------------------------------------------------------------------------------------------------
+
 24 SHARD KEY 
  
 
@@ -690,6 +689,7 @@ ____________________
   if you use "country" as the shard key, all data for a specific country is stored together. 
   This helps with efficient retrieval, but picking the right shard key is important for balanced distribution.
 -------------------------------------------------------------------------------------------------------
+
 25  QUERY ROUTES
 
    Querying routes in MongoDB involves using the find() method to retrieve specific route information 
@@ -701,23 +701,25 @@ ____________________
   .  const result = await routesCollection.find(query).toArray();
 -------------------------------------------------------------------------------------------------------
 
-Journaling:
+26) Journaling:
 
-Journaling in MongoDB is a process of writing all write operations to an on-disk journal before they are applied to the database data files. This ensures that the database will be in a consistent state even if MongoDB crashes unexpectedly.
+    Journaling in MongoDB is a process of writing all write operations to an on-disk journal before they 
+    are applied to the database data files. 
+    This ensures that the database will be in a consistent state even if MongoDB crashes unexpectedly.
 
-`how journaling works in MongoDB:`
+    `how journaling works in MongoDB:`
 
-- When a write operation is performed, MongoDB writes the operation to an in-memory buffer.
-- Once the buffer full, or after certain interval of time, MongoDB writes contents buffer to the journal file.
-- Once the journal file is written, MongoDB applies the write operations to the database data files.
+    - When a write operation is performed, MongoDB writes the operation to an in-memory buffer.
+    - Once the buffer full, or after certain interval of time, MongoDB writes contents buffer to the journal file.
+    - Once the journal file is written, MongoDB applies the write operations to the database data files.
 
-// Enabling journaling
-db.adminCommand({setParameter: 1, journalCommitInterval: 100});
+    // Enabling journaling
+    db.adminCommand({setParameter: 1, journalCommitInterval: 100});
 
-// Adding a document to a collection
-db.myCollection.insertOne({name: "John Doe", age: 30});
-
+    // Adding a document to a collection
+    db.myCollection.insertOne({name: "John Doe", age: 30});
 -------------------------------------------------------------------------------------------------------
+
   DATE VS TIMESTAMP 
 
   Both data types used to store date and time information

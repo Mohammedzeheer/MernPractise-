@@ -1,3 +1,4 @@
+
 ------------------------------  JAVASCRIPT  ---------------------------------
  JAVASCRIPT
 
@@ -26,15 +27,14 @@
   var: Older, has scope issues, avoid using.
   let: Modern, scoped within blocks, can be reassigned.
   const: Like let, but value can't be changed after set.
-
 -----------------------------------------------------------------------------
 
  EVENT LISTENER 
 
   An event listener is a function that waits for and responds to 
   specific events triggered by user interactions or system actions.
-
 -----------------------------------------------------------------------------
+
  SHALLOW COPY
 
   A shallow copy of an object or array creates a new object or array, 
@@ -42,7 +42,7 @@
   in the copied object. In other words, changes to nested elements in the copied
   object will affect the original object and vice versa.
 
-          const a = {
+```const a = {
              name: 'zeheer',
              details: {
              place: 'ksd'
@@ -52,7 +52,7 @@
 
        const b=a
        b.details.place='kannur'
-       console.log(a)
+       console.log(a)```
 
  DEEP COPY
 
@@ -74,8 +74,6 @@
 	const deepCopy = rfdc(originalObject);
 
 	console.log(deepCopy);
-
-
 -----------------------------------------------------------------------------
 
  CALL
@@ -159,13 +157,14 @@
   has the same name as a variable in an outer scope (e.g. a global variable).
 
   Eg:
-  const x = 10;
+  ```const x = 10;
   function example() {
      const x = 20; // This variable shadows the outer 'x'
      console.log(x); // Prints 20, the inner 'x'
   }
   example();
   console.log(x); // Prints 10, the outer 'x'
+  ```
 -----------------------------------------------------------------------------
 
  PROTOTYPE
@@ -177,7 +176,7 @@
   Generator functions are special functions in JavaScript that can be paused and resumed,
   allowing for iterable sequences to be generated.
    
-  Eg
+  ```Eg
    function* evenNumberGenerator() {
      let num = 0;
      while (true) {
@@ -191,6 +190,7 @@
    console.log(evenIterator.next().value); // 0
    console.log(evenIterator.next().value); // 2
    console.log(evenIterator.next().value); // 4
+   ```
 -----------------------------------------------------------------------------
 
  ANONYMOUS FUNCTION

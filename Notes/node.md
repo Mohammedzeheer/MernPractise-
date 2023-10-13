@@ -1085,12 +1085,38 @@ ____________
   Router chaining is a technique in web development where multiple routers or middleware 
   functions are sequentially applied to process HTTP requests in a specific order.
 
+       ```const express = require('express');
+          const router = express.Router();
+
+  // Middleware function 1
+          router.use((req, res, next) => {
+            console.log('Middleware 1 for products');
+            next();                                     // Pass control to the next middleware in the chain
+          });
+
+  // Middleware function 2
+          router.get('/', (req, res, next) => {
+            console.log('Middleware 2 for products');
+            res.send('List of products');
+          });
+
+          module.exports = router```
+
+
 ------------------------------------------------------------------------------------------------------------
 
  WRITE HEAD
 
   "WriteHead" could refer to the response header in web development, where you set properties 
   like status code and content type before sending a response to the client.
+
+     ```const http = require('http');
+
+        const server = http.createServer((req, res) => {  
+          res.writeHead(200, {'Content-Type': 'text/plain'});       // Set the response status code and content type
+          res.end('Hello, World!\n');                              // Send the response body
+        });
+      ```
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -1110,12 +1136,20 @@ ____________
 
  HTTP VS HTTPS
 
-  HTTP:
-    Unsecured protocol for internet data transfer.
-    Data is transmitted in plain text.
-    Vulnerable to interception and manipulation.
+ HTTP: 
+        It transmits data in plain text, 
+        which means that the information exchanged between your browser and the website is not encrypted.
+        This makes it vulnerable to eavesdropping, where unauthorized parties can intercept and read the data.
+
+          Unsecured protocol for internet data transfer.
+          Data is transmitted in plain text.
+          Vulnerable to interception and manipulation.
 
   HTTPS:
+
+    It encrypts the data using SSL (Secure Sockets Layer) or TLS (Transport Layer Security) protocols.
+    This encryption ensures that even if someone intercepts the data, they won't be able to read it without the decryption key. 
+    This is particularly important for sensitive information like passwords, credit card details, and personal information.
     Secured version of HTTP.
     Uses encryption (SSL/TLS) for data protection.
     Prevents interception and manipulation of data.

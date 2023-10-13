@@ -169,15 +169,14 @@ ___
   When you interact, the server sends a whole new page to the browser.
   It feels like navigating between different pages on a website.
   Examples: Traditional websites with multiple interconnected pages.
-
 ----------------------------------------------------------------------------------------------------------
+
 REUSIBILITY
 ___________
 
   Reusability in React means creating components that can be used multiple times throughout your application. 
   By designing reusable components, you can write code once and use it in different parts of your app, 
   promoting code organization, efficiency, and consistency in design and behavior.
-
 ----------------------------------------------------------------------------------------------------------
 
 DYNAMIC RENDERING
@@ -185,8 +184,8 @@ __________________
 
   Dynamic rendering refers to the ability to update and change the content of a web page 
   or user interface based on certain conditions, user interactions, or data changes
-
 ----------------------------------------------------------------------------------------------------------
+
 LIFECYCLE METHOD 
 _________________
 
@@ -206,8 +205,6 @@ _________________
   componentWillUnmount():
     Called right before the component is removed from the DOM.
     It's used for cleanup tasks like removing event listeners or canceling timers.
-
-
 ----------------------------------------------------------------------------------------------------------
 
 REACT ROUTER
@@ -251,7 +248,7 @@ _______________
 FRAGMENTS
 _________
 
-  Fragments in React group multiple JSX elements without introducing an extra wrapper element in the DOM, 
+  Fragments in React group multiple JSX elements without adding extra nodes to the DOM.
   improving code readability and keeping the DOM structure clean.
 
   fragment and a div : fragment does not render anything to the DOM, while a div does.
@@ -422,7 +419,6 @@ ____
 
   React Fiber is the internal engine of React that handles the reconciliation and rendering process,
   enabling efficient updates and improved performance.
-
 ----------------------------------------------------------------------------------------------------------
 
  GENERATOR FUCTION
@@ -449,6 +445,7 @@ ____
  __________
    
   PropTypes is React's internal mechanism for adding type checking to components
+----------------------------------------------------------------------------------------------------------
 
   The main difference between custom hooks and regular utility functions is that custom
   hooks usually involve the use of other in-built hooks and follow the rules of hooks, 
@@ -534,6 +531,7 @@ SUSPENCE
 ________
 
   Suspense is a new feature that lets your component “wait” for something before it can render.
+  it is used in lazy loading
 ----------------------------------------------------------------------------------------------------------
 
 DISPATCHING
@@ -558,9 +556,27 @@ ________
    Batching in React is a technique that groups multiple state updates into a single re-render. 
    This can improve performance by reducing the number of times the DOM needs to be updated.
 
-   React uses batching to group state updates within event handlers and inbuilt hooks.
+   import React, { useState } from 'react';
 
+    ```function Counter() {
+      const [count, setCount] = useState(0);
 
+      const handleClick = () => {
+        // This will be batched together
+        setCount(count + 1);
+        setCount(count + 1);
+        setCount(count + 1);
+      };
+
+      return (
+        <div>
+          <p>Count: {count}</p>
+          <button onClick={handleClick}>Increment</button>
+        </div>
+      );
+    }
+
+    export default Counter;```
 ----------------------------------------------------------------------------------------------------------
 
 SYNTHETIC EVENTS
@@ -568,6 +584,22 @@ SYNTHETIC EVENTS
    Synthetic events in React are a uniform way to handle events across different browsers. 
    They wrap native browser events to provide a consistent interface. This helps avoid cross-browser 
    compatibility issues when working with events in React components.
+
+        ```import React from 'react';
+
+        class MyComponent extends React.Component {
+          handleClick = (event) => {           
+            console.log('Button clicked!', event.target);  // Access properties of the synthetic event
+          }
+
+          render() {
+            return (
+              <button onClick={this.handleClick}>Click Me</button>
+            );
+          }
+        }
+
+        export default MyComponent;```
 ----------------------------------------------------------------------------------------------------------
 
 CUSTOM HOOK
@@ -584,12 +616,12 @@ REACT MEMO
   React.memo is a higher-order component (HOC) provided by React.
   It's used for optimizing functional components by preventing unnecessary re-renders.
 
-   const MyComponent = React.memo(({ name }) => {
+   ```const MyComponent = React.memo(({ name }) => {
      console.log('Rendering MyComponent');
      return <div>{name}</div>;
     });
 
-  .  export default MyComponent;
+    export default MyComponent;``` 
 ----------------------------------------------------------------------------------------------------------
 
 Redux Lifecycle:
