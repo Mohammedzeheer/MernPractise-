@@ -411,87 +411,278 @@ const { link } = require("fs")
 // console.log(`reverse`,l.reverse());
 
 
-class node {
-constructor(value){
-  this.value=value
-  this.left=null
-  this.right=null
-}
-}
+// class node {
+// constructor(value){
+//   this.value=value
+//   this.left=null
+//   this.right=null
+// }
+// }
 
 
-class bst {
-  constructor(){
-    this.root=null
-  }
+// class bst {
+//   constructor(){
+//     this.root=null
+//   }
 
-  add(value){
-    let newnode = new node(value)
-    if(!this.root){
-      this.root=newnode 
-    }else{
-      this.addRecursion(this.root,newnode)
-    }
-  }
+//   add(value){
+//     let newnode = new node(value)
+//     if(!this.root){
+//       this.root=newnode 
+//     }else{
+//       this.addRecursion(this.root,newnode)
+//     }
+//   }
 
-  addRecursion(root,newnode)
-  {  
-    if(root.value<newnode.value){
-      if(root.left==null){
-        root.left=newnode 
-      }else{
-        this.addRecursion(root.left,newnode)
-      }
-    }else{
-       if(root.right==null){
-        root.right=newnode
-       }else{
-        this.addRecursion(root.right,newnode)
-       }
-    }
-  }
+//   addRecursion(root,newnode)
+//   {  
+//     if(root.value<newnode.value){
+//       if(root.left==null){
+//         root.left=newnode 
+//       }else{
+//         this.addRecursion(root.left,newnode)
+//       }
+//     }else{
+//        if(root.right==null){
+//         root.right=newnode
+//        }else{
+//         this.addRecursion(root.right,newnode)
+//        }
+//     }
+//   }
   
   
-  inorder(){
-  this.inordertraversal(this.root)
-}
+//   inorder(){
+//   this.inordertraversal(this.root)
+// }
 
 
-preorder(){
-  this.preordertraversal(this.root)
-}
+// preorder(){
+//   this.preordertraversal(this.root)
+// }
 
-preordertraversal(root){
-  if(!root){
-    return
-  }
+// preordertraversal(root){
+//   if(!root){
+//     return
+//   }
 
-  this.preordertraversal(root.left)
-  this.preordertraversal(root.right)
-  console.log(root.value)
-}
-
-
-inordertraversal(root){ 
-  if(!root){
-    return 
-  }
-    this.inordertraversal(root.left)
-    console.log(root.value)
-    this.inordertraversal(root.right)
-}
-}
+//   this.preordertraversal(root.left)
+//   this.preordertraversal(root.right)
+//   console.log(root.value)
+// }
 
 
+// inordertraversal(root){ 
+//   if(!root){
+//     return 
+//   }
+//     this.inordertraversal(root.left)
+//     console.log(root.value)
+//     this.inordertraversal(root.right)
+// }
+// }
 
 
 
-let b=new bst()
 
-b.add(23)
-b.add(33)
-b.add(67)
 
-b.preorder()
+// let b=new bst()
 
-console.log(b)
+// b.add(23)
+// b.add(33)
+// b.add(67)
+
+// b.preorder()
+
+// console.log(b)
+
+
+// class node{
+//   constructor(value){
+//     this.value=value
+//     this.right=null
+//     this.left=null
+//   }
+// }
+
+// class bst{
+//   constructor(){
+//     this.root=null
+//   }
+
+//   append(value){
+//     let newnode=new node(value) 
+//      if(!this.root){
+//       this.root=newnode
+//      }else{
+//       this.addnode(this.root,newnode)
+//      }
+//   }
+
+//   addnode(root,newnode)
+// { 
+//    if(newnode.value< root.value){
+//     if(root.left==null){
+//       root.left=newnode
+//     }else{
+//       this.addnode(root.left,newnode)
+//     }
+//    }else{
+//     if(root.right==null) {
+//       root.right=newnode
+//     }else{
+//       this.addnode(root.right,newnode)
+//     }
+//    }
+// }
+
+//    prenode(){
+//     this.pretraversal(this.root)
+//    }
+//    pretraversal(root){
+//     if(!root){
+//       return
+//     }
+//       console.log(root.value)
+//       this.pretraversal(root.left)
+//       this.pretraversal(root.right)
+//    }
+
+// }
+// let bs= new bst()
+// bs.append(34)
+// bs.append(14)
+// bs.append(64)
+// bs.append(24)
+// bs.append(84)
+// bs.prenode()
+// console.log(bs);
+
+
+// let a= 12345
+// function addnum(a){
+//   if(a<6){
+//     return a
+//   }
+//  return (a%10 ) + addnum(Math.floor(a/10))
+// }
+// console.log(addnum(a));
+
+
+
+// let a = 12345;
+// let sum = 0;
+
+// while(a > 0){
+//   let digit = a % 10;
+//   sum = sum + digit;
+//   a = Math.floor(a / 10);
+// }
+
+// console.log(sum); 
+
+
+// class node{
+//   constructor(value){
+//     this.value=value
+//     this.next=null
+//   }
+// }
+
+// class linkedList{
+//   constructor(){
+//     this.head=null
+//     this.tail=null
+//   }
+
+//   add(value){
+//     let newnode= new node(value)
+//     if(!this.head){
+//       this.head=newnode
+//       this.tail=newnode
+//       return 
+//     }
+//     this.tail.next=newnode
+//     this.tail=newnode 
+//   }
+
+//   deleteEnd(){
+//     if(!this.head){
+//       return 
+//     }
+//     let curr=this.head
+//     while(curr.next.next)
+//     {
+//       curr=curr.next
+//     }
+//     this.tail = curr;
+//     this.tail.next = null;
+//   }
+
+//   middle(){
+//     let temp=this.head
+//     let mid=this.head
+//     while(temp && temp.next){
+//       mid=mid.next
+//       temp=temp.next.next
+//     }
+//     console.log(`middle: `,mid.value);
+//   }
+
+//   reverse1() {
+//     let prev = null;
+//     let next = null;
+//     let curr = this.head;
+
+//     while (curr) {
+//         next = curr.next;
+//         curr.next = prev;
+//         prev = curr;
+//         curr = next;
+//     }
+
+//     this.tail = this.head;
+//     this.head = prev; 
+// }
+
+
+//    reverse(){
+//      return this.reverserecursive(this.head)
+//    }
+
+//    reverserecursive(node){
+//     if(!node || !node.next){
+//       this.head=node
+//       return 
+//     }
+//     this.reverserecursive(node.next)
+//     node.next.next= node
+//     node.next=null
+//    }
+
+//  print(){
+//   let cur=this.head
+//   while(cur){
+//     console.log(cur.value);
+//     cur=cur.next
+//   }
+//  }
+
+
+// }
+
+// let l= new linkedList()
+// l.add(34)
+// l.add(84)
+// l.add(24)
+// l.add(94)
+// l.add(14)
+// l.middle()
+
+// l.reverse();
+// // l.deleteEnd()
+// l.print()
+
+let a='hello world'
+let b=a.split(' ').reverse(' ').join()
+console.log(b);

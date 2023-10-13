@@ -115,8 +115,6 @@
  BIND
   bind is a JavaScript method that creates a new function with a predefined this 
   value & optional pre-filled arguments,without executing the function immediately.
-
-
 -----------------------------------------------------------------------------
 
  CURRYING
@@ -131,7 +129,6 @@
   }
   let result= currying(3)(6)
   console.log(result)
-
 -----------------------------------------------------------------------------
 
  CLOSURE
@@ -149,14 +146,12 @@
          Performance Overhead
          Debugging Complexity
          Garbage Collection Challenges
-
 -----------------------------------------------------------------------------
 
  MEMOIZATION
   Memoization is an optimization technique, similar to caching. 
   It works by storing the previous results of a function call and 
   using those results the next time the function runs
-
 -----------------------------------------------------------------------------
 
  SHADOWING
@@ -171,13 +166,11 @@
   }
   example();
   console.log(x); // Prints 10, the outer 'x'
-
 -----------------------------------------------------------------------------
 
  PROTOTYPE
   Prototype is an object property in JavaScript that allows objects to inherit
   methods and properties from other objects.
-
 -----------------------------------------------------------------------------
 
  GENERATOR FUNCTION
@@ -198,26 +191,22 @@
    console.log(evenIterator.next().value); // 0
    console.log(evenIterator.next().value); // 2
    console.log(evenIterator.next().value); // 4
-
 -----------------------------------------------------------------------------
 
  ANONYMOUS FUNCTION
   Anonymous functions are functions without a specified name, 
   often used as inline,arraw or callback functions.
-
 -----------------------------------------------------------------------------
 
  RECURSIVE FUNCTION
   Recursive functions are functions that call themselves to repeat 
   a task until a certain condition is met
-
 -----------------------------------------------------------------------------
 
  SINGLE THREAD AND MULTIPLE THREAD 
 
   Single thread: Executes one task at a time in a sequential manner.
   Multi-thread: Executes multiple tasks simultaneously in parallel threads.
-
 -----------------------------------------------------------------------------
 
  PRIMITIVE AND NON PRIMITIVE 
@@ -225,13 +214,11 @@
   Primitive data types (e.g., numbers, strings) store their values directly, 
   non-primitive types (e.g., objects, arrays) store references to their values in 
   memory.
-
 -----------------------------------------------------------------------------
 
  INVOKED FUNCTION 
   An invoked function is a function that is executed or called to perform its 
   defined tasks.
-
 -----------------------------------------------------------------------------
 
  FIRST CLASS FUNCTION
@@ -259,21 +246,18 @@
          }
 
          const result = applyOperation(5, 3, add);
-
 -----------------------------------------------------------------------------
 
  CALLBACK HELL 
 
   Callback hell refers to the situation in asynchronous programming when 
   multiple nested callbacks make the code difficult to read and maintain.
-
 -----------------------------------------------------------------------------
 
  CALLBACK
 
   A callback is a function that is passed as an argument to another function 
   and is executed when a certain event or task is completed.
-
 -----------------------------------------------------------------------------
 
  PROMISE
@@ -282,7 +266,6 @@
 
    It has three states: 
     pending(Initial State), fulfilled (resolved), and rejected.
-
 -----------------------------------------------------------------------------
 
  LITERALS
@@ -293,7 +276,6 @@
    Numeric literals: Representing numbers, such as integers or floating-point values.
    String  literals: Sequences of characters, enclosed in single or double quotes.
    Boolean literals: Representing true or false values.
-
 -----------------------------------------------------------------------------
 
  PURE FUNCTION 
@@ -305,7 +287,6 @@
   function add(a, b) {
       return a + b;
   }
-
 -----------------------------------------------------------------------------
 
  INPURE FUNCTION 
@@ -320,7 +301,6 @@
       total += amount; // Modifying external state
       console.log("Total is now: " + total); // Side effect
   }
-
 -----------------------------------------------------------------------------
 
  EVENT DELEGATION
@@ -342,8 +322,6 @@
           console.log('Clicked on: ' + event.target.textContent);
       }
   });
-
-
 -----------------------------------------------------------------------------
 
  EVENT FLOW
@@ -362,8 +340,8 @@
   document.getElementById('child').addEventListener('click', function(event) {
       console.log('Child clicked');
   });
-
 -----------------------------------------------------------------------------
+
  PROMICE RACE
 
   Promise.race() takes an array of promises and returns a new promise that settles 
@@ -380,15 +358,14 @@
     .catch(error => {
         console.error('Error:', error); // Output: Error: Promise 2 rejected
     });
-
 -----------------------------------------------------------------------------
 
  PROMISIFY
   Promisifying in JavaScript means converting functions that use callbacks for 
   asynchronous operations into functions that return Promises. This makes it 
   easier to work with asynchronous code using modern Promise-based patterns.
-
 -----------------------------------------------------------------------------
+
  PROMISE ALL
   Promise.all() takes an array of promises and returns a new promise that resolves 
   with an array of their resolved values, maintaining order. If any promise in the 
@@ -406,7 +383,6 @@
     .catch(error => {
         console.error(error);
     });
-
 -----------------------------------------------------------------------------
 
  PROMISE ANY 
@@ -427,7 +403,6 @@
     .catch(errors => {
         console.error(errors); // Output if all promises reject: ["Error 1", "Error 3"]
     });
-
 -----------------------------------------------------------------------------
 
   NULLISH COALISCO
@@ -441,7 +416,6 @@
   const defaultName = name ?? 'Unknown';
 
   console.log(defaultName); // Output: Unknown
-
 -----------------------------------------------------------------------------
 
  TERNARY OPERATOR 
@@ -454,7 +428,6 @@
   const isAdult = age >= 18 ? 'Yes' : 'No';
 
   console.log(isAdult); // Output: Yes
-
 -----------------------------------------------------------------------------
 
  FUNCTION COMPOSITION
@@ -472,7 +445,6 @@
   const composedFunction = x => subtract(double(add(x)));
 
   console.log(composedFunction(10)); // Output: 17
-
 -----------------------------------------------------------------------------
 
  IMMEDIATE INVOKED FUNCTION 
@@ -488,7 +460,6 @@
   })();
 
   // Output: IIFE executed
-
 -----------------------------------------------------------------------------
 
  HIGHER ORDER FUNCTION 
@@ -512,7 +483,6 @@
 
   let result1 = applyOperation(5, 3, add);      // Output: 8
   let result2 = applyOperation(5, 3, subtract); // Output: 2
-
 -----------------------------------------------------------------------------
 
  OBJECT FREEZE 
@@ -526,7 +496,6 @@
 
   obj.age = 30; // No effect
   console.log(obj.age); // Output: undefined
-
 -----------------------------------------------------------------------------
 
  EVENT LOOP 
@@ -542,8 +511,6 @@
    4- The event loop continuously checks the queue.
    5- If the call stack is empty, a callback is moved from the queue to the stack.
    6- The callback executes, potentially triggering more tasks.
-
-
 -----------------------------------------------------------------------------
 
  SET VS MAP
@@ -583,14 +550,13 @@
 
      console.log(userRoles.get('John')); // Output: Admin
      console.log(userRoles.size); // Output: 2
-
 -----------------------------------------------------------------------------
+
  WEAK SET (WeakSet)
   Collection of objects that allows automatic garbage collection when objects are no longer used.
 
  WEEK MAP (WeakMap): 
   Collection of key-value pairs with automatic garbage collection for both keys and their values.
-
 -----------------------------------------------------------------------------
  UNDEFIND
   Represents a variable without a value. Occurs when a variable is declared 
@@ -607,7 +573,6 @@
   Example:
          let data = null;
          console.log(data);  // Output: null
-
 -----------------------------------------------------------------------------
 
  CALL
@@ -621,7 +586,6 @@
   const person = { title: 'Mr.' };
 
   greet.call(person, 'John');
-
 ------------------------------------
 
  APPLY
@@ -635,7 +599,6 @@
 
   const numbers = [5, 3];
   const sum = add.apply(null, numbers);
-
 -------------------------------------
 
  BIND 
@@ -650,7 +613,6 @@
   const user = { name: 'Alice' };
   const logForUser = logInfo.bind(user);
   logForUser('Logged in');
-
 -----------------------------------------------------------------------------
 
  ARRAY METHOD
@@ -665,14 +627,12 @@
   FOREACH:  The forEach method in JavaScript iterates over each element in an array 
             and applies a provided function to each element.It's useful for performing 
             an action on each element without creating a new array.
-
 -----------------------------------------------------------------------------
 
  OPTIONAL CHAINING
   Optional chaining in JavaScript (?.) lets you safely access properties and methods of 
   potentially null or undefined values without causing errors. If the value is 
   null or undefined, the expression short-circuits and returns undefined.
-
 -----------------------------------------------------------------------------
 
  TROTTLING 
@@ -685,7 +645,6 @@
   Debouncing in JavaScript delays the execution of a function until a brief pause occurs in
   a series of triggering events. It helps prevent rapid and unnecessary function calls,
   which can be useful for optimizing performance, especially with actions like resizing or typing.
-
 -----------------------------------------------------------------------------
 
  DIFER (difer)
@@ -697,8 +656,6 @@
 
   Defer Function Execution: Using setTimeout, you can delay the execution of a function, 
   which is helpful for controlling when code runs, like waiting before performing an action.
-
-
 -----------------------------------------------------------------------------
 
 EVENT POOLING
@@ -711,7 +668,6 @@ EVENT POOLING
    document.addEventListener('click', function(event) {
     console.log(event); // The same event object is reused for every click event
   });
-
 -----------------------------------------------------------------------------
 
 BOM
@@ -719,9 +675,6 @@ BOM
 Browser Object Model means accessing the properties of the web browser.
 BOM has a root object called window-object 
 It is used by JavaScript to interact with the browser and control its behavior.
-
-BOM is the window object. This object contains properties and methods that allow 
-JavaScript to access and control the browser window, such as its size, position, and title.
 
 Why is the Browser Object Model important?
 
@@ -739,7 +692,6 @@ Display alerts and dialog boxes
 Get and set the browser's cookies
 Control the browser's media player
 Access the browser's JavaScript console
-
 -----------------------------------------------------------------------------
 
 Typeof NULL and UNDEFINED
@@ -817,7 +769,7 @@ It is similar to a constructor function, but it does not require the new keyword
   `console.log(user); // { name: 'Alice', age: 25 }`
 
 
-
+-----------------------------------------------------------------------------
 
 
 

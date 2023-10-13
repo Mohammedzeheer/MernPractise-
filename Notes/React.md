@@ -85,8 +85,8 @@ ACTUAL DOM
 ___________
 
   Actual DOM is the real representation of the HTML document and interacts directly with the browser.
-
 ---------------------------------------------------------------------------------------------------------- 
+
 REACT WORKS 
 ___________
 
@@ -138,7 +138,18 @@ ____
 
   DOM (Document Object Model) in JavaScript represents the structure of a web page as a tree. 
   It allows JavaScript to interact with and modify elements on the page. 
+
   You can access elements, manipulate their properties, handle events, and change the structure dynamically.
+
+  Dom ManipulateMethods:
+        getElementById        :   var element = document.getElementById("myElementId");
+        getElementsByClassName:   var elements = document.getElementsByClassName("myClassName");
+        getElementsByTagName  :   var elements = document.getElementsByTagName("div");
+        querySelector         :   var element = document.querySelector("#myElementId");
+        innerHTML             :   element.innerHTML = "<p>New content</p>";
+        innerText             :   element.innerText = "New text content";
+
+
 
 ----------------------------------------------------------------------------------------------------------
 SPA

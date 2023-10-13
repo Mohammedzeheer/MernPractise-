@@ -2,6 +2,8 @@
 // var displayComment = () => console.log(comment);
 // window.displayComment();
 
+const { json } = require("stream/consumers")
+
 // const a='hello' + 10 + 10
 // console.log(a)
 
@@ -441,17 +443,79 @@
 
 // console.log(findSum(a));
 
-const arr= [1,3,5]
-var canMakeArithmeticProgression = function(arr) {
-    arr.sort((a,b) => a-b)
-    let diff = Math.abs(arr[0] - arr[1])
-    for (let i = 0; i < arr.length - 1;i ++) {
-        if (diff !== Math.abs(arr[i] - arr[i+1])) {
-            return false
-        }
-    }
-    return true
+// const arr= [1,3,5]
+// var canMakeArithmeticProgression = function(arr) {
+//     arr.sort((a,b) => a-b)
+//     let diff = Math.abs(arr[0] - arr[1])
+//     for (let i = 0; i < arr.length - 1;i ++) {
+//         if (diff !== Math.abs(arr[i] - arr[i+1])) {
+//             return false
+//         }
+//     }
+//     return true
      
-};
+// };
 
-console.log(canMakeArithmeticProgression(arr))
+// console.log(canMakeArithmeticProgression(arr))
+
+// class heap {
+//     constructor(){
+//         this.heap=[]
+//     }
+
+//     parents(i){
+//      return  Math.floor((i-1)/2)
+//     }
+
+//     leftChild(i){
+//         return 2 * i + 1
+//     }
+
+//     rightChild(i){
+//         return 2 * i + 2
+//     }
+    
+//     swap(i,j){
+//         [this.heap[i],this.heap[j]]=[this.heap[j],this.heap[i]]
+//     }
+
+//     size(){
+//         return this.heap.length
+//     }
+
+//     add(value){
+//       this.heap.push(value)
+//       this.heapup(this.size())
+//     }
+
+//     heapup(i){
+//       let parent= this.parents(i)
+//       while(i>=0 && this.heap[i]<this.heap[parent]){
+//            this.swap(i,parent)
+//            i= parent
+//            parent=this.parents(i)
+//       }
+//     }
+
+// }
+
+// const a={name:'abdul',place:{native:'ksd',work:'kannur'}}
+// const b=JSON.parse(JSON.stringify(a))
+
+
+// b.name='abdullah'
+// b.place.native='kannur'
+// console.log(a)
+// console.log(b)
+
+
+const promise1 = new Promise(resolve => setTimeout(() => resolve('Promise 1 resolved'), 2000));
+const promise2 = new Promise((resolve, reject) => setTimeout(() => reject('Promise 2 rejected'), 1000));
+
+Promise.all([promise1, promise2])
+  .then(result => {
+      console.log('Result:', result); // Output: Result: Promise 2 rejected
+  })
+  .catch(error => {
+      console.error('Error:', error); // Output: Error: Promise 2 rejected
+  });
