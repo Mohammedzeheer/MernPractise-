@@ -97,7 +97,7 @@ ___________
 ----------------------------------------------------------------------------------------------------------
 
 STATE
-______
+_____
 
   State in React represents the component's own data that can be modified and updated over time. 
   It allows components to manage and reflect changes in their internal state, influencing the UI rendering
@@ -134,7 +134,7 @@ __________
 
 ----------------------------------------------------------------------------------------------------------
 DOM
-____
+___
 
   DOM (Document Object Model) in JavaScript represents the structure of a web page as a tree. 
   It allows JavaScript to interact with and modify elements on the page. 
@@ -148,8 +148,6 @@ ____
         querySelector         :   var element = document.querySelector("#myElementId");
         innerHTML             :   element.innerHTML = "<p>New content</p>";
         innerText             :   element.innerText = "New text content";
-
-
 
 ----------------------------------------------------------------------------------------------------------
 SPA
@@ -308,10 +306,15 @@ ____
   typically through credentials like usernames and passwords.
 
   Authorization determines what actions a user is allowed to perform based on their authenticated identity.
+
+  Header.Payload.Signature  :- 
+    Header: Contains the token type (JWT) and the signing algorithm (HS256).
+    Payload: Holds the data or claims, like user info (userId, name).
+    Signature: Verifies the token’s integrity using a secret key.
 ----------------------------------------------------------------------------------------------------------
 
  ACTION CREATOR
- _______________
+ ______________
 
   An action creator is a function that creates and returns an action object in Redux to initiate a state change.
 ----------------------------------------------------------------------------------------------------------
@@ -360,6 +363,9 @@ ____
 
  LAZY LOADING
  ____________
+
+  Lazy Loading in React is a technique for loading components only when they are needed, 
+  instead of loading them all at once during the initial render.
 
   lazy loading is a feature that allows you to load components or routes dynamically only when they are needed,
   improving performance by reducing initial bundle size.
@@ -412,6 +418,12 @@ ____
 
  custom hook is a reusable function that encapsulates logic and state, 
  allowing it to be shared between multiple components.
+
+  A custom hook in React is like a reusable piece of logic that you can use in different parts of your app. 
+  It's a function that helps you manage state or do other tasks.
+
+  For example, you could create a custom hook to handle counting. Then, you can use this hook in different 
+  components to keep track of numbers without having to rewrite the same logic each time. 
 ----------------------------------------------------------------------------------------------------------
 
  REACT FIBER
@@ -602,15 +614,6 @@ SYNTHETIC EVENTS
         export default MyComponent;```
 ----------------------------------------------------------------------------------------------------------
 
-CUSTOM HOOK
-
-  A custom hook in React is like a reusable piece of logic that you can use in different parts of your app. 
-  It's a function that helps you manage state or do other tasks.
-
-  For example, you could create a custom hook to handle counting. Then, you can use this hook in different 
-  components to keep track of numbers without having to rewrite the same logic each time. 
-----------------------------------------------------------------------------------------------------------
-
 REACT MEMO
 
   React.memo is a higher-order component (HOC) provided by React.
@@ -643,28 +646,53 @@ steps:
 .5) Update the UI. `Components can update their UI based on the latest state.`
 ----------------------------------------------------------------------------------------------------------
 
-Why JWT is called JSON:
+"API" 
+stands for Application Programming Interface. 
+API refers to a set of rules, protocols,
+and tools that allows different software applications to communicate with each other.
 
-JWT stands for JSON Web Token. It's called JSON because the token itself is a JSON object that is base64 
-encoded and digitally signed for verification.
-
-A JWT consists of three parts separated by dots:
-
-Header:  Contains metadata about the token (like the type and the signing algorithm).
-Payload: Contains the claims (statements) about an entity (typically, the user) and additional data.
-Signature: Used to verify the authenticity of the token.
-
-Eg:
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 ----------------------------------------------------------------------------------------------------------
-
+REACT 18 HOOKS 
+  useId
+  useDeferredValue
+  useTransition
+  useSyncExternalStore
+  useInsertionEffect
 
 ----------------------------------------------------------------------------------------------------------
 
+ JEST
+
+ Jest is a JavaScript testing framework developed by Facebook. It is designed to be easy to set up and use,
+ while providing a comprehensive and feature-rich testing environment for JavaScript applications, 
+ particularly those built with frameworks like React, Angular, or Vue.
 ----------------------------------------------------------------------------------------------------------
+
+ RESTful API  (Representational of state transfer Application programming interface)
+
+   RESTful API is an interface that two computer systems use to exchange information securely over the internet.
+
+  - It is an architectural style for designing networked applications.
+  - Stateless Communication:
+       The server does not maintain any client state. Each request must contain all the information 
+       needed for the server to fulfill it.
+  - REST APIs use standard HTTP methods to perform operations on resources: get,post,put,delete,option methods
+  - Resources can have multiple representations, such as JSON, XML, HTML, 
 
 ----------------------------------------------------------------------------------------------------------
 
+ LIBRARY VS FRAMEWORK
+
+ Library:
+
+  A collection of pre-written functions for specific tasks.
+  You use it as needed, retaining control over your application's structure.
+
+ Framework:
+
+  A structured foundation with predefined rules.
+  Dictates the overall architecture and flow of your application.
+  You work within the framework's structure, customizing it to your needs.
 ----------------------------------------------------------------------------------------------------------
 
 
